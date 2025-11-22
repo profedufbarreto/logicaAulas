@@ -1,7 +1,5 @@
-a = 10
-b  = 2.6
-c = "Palavra"
+mensagem = "Olá mundo!"
+mensagem1 = "Meu nome é Eduardo!"
 
-print(a)
-print(b)
-print(c)
+print(mensagem)
+print(mensagem1)
