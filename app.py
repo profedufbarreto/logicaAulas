@@ -1,5 +1,4 @@
-mensagem = "Olá mundo!"
-mensagem1 = "Meu nome é Eduardo!"
+nome = "Eduardo"
+mensagem = "Olá "
 
-print(mensagem)
-print(mensagem1)
+print(mensagem, nome)
