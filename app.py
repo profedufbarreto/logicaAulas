@@ -1,6 +1,6 @@
 nome = "Eduardo"
-mensagem = "Olá ", nome
+mensagem = f"Olá {nome}"
 
-#fazendo algo errado
-
+#problema corrigido
+#Usando uma Formatted String Literal
 print(mensagem)
