@@ -1,4 +1,6 @@
 nome = "Eduardo"
-mensagem = "Olá "
+mensagem = "Olá ", nome
 
-print(mensagem, nome)
+#fazendo algo errado
+
+print(mensagem)
