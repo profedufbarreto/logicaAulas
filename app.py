@@ -1,12 +1,22 @@
-nota1 = float(input("Digite o valor da nota 1: "))
-nota2 = float(input("Digite o valor da nota 2: "))
-nota3 = float(input("Digite o valor da nota 3: "))
+a = float(input("Digite um valor para a: "))
+b = float(input("Digite um valor para b: "))
 
-media = (nota1 + nota2 + nota3) / 3
+opcao = int(input("Escolha uma opção: (1 - Soma, 2 - Subt, 3 - Mult e 4 - Div: )"))
 
-if media >= 7:
-    print(f"Parabéns! Você aprovou com média: {media:.2f}!")
-elif media >= 5:
-    print(f"Você está de recuperação! Média: {media:.2f}!")
+if opcao == 1:
+    soma = a + b
+    print(f"O resultado de {a} + {b} = {soma}!")
+elif opcao == 2:
+    subt = a - b
+    print(f"O resultado de {a} - {b} = {subt}!")
+elif opcao == 3:
+    mult = a * b
+    print(f"O resultado de {a} * {b} = {mult}!")
 else:
-    print(f"Você reprovou! Sua média foi: {media:.2}!")
+    if b <= 0:
+        print(f"ERRO: Divisão por zero!")
+    else:
+        div = a / b
+        print(f"O resultado de {a} / {b} = {div}!")
+
+
