@@ -1,6 +1,4 @@
-nome = "Eduardo"
-mensagem = f"Olá {nome}"
+a = 4
+b = a
 
-#problema corrigido
-#Usando uma Formatted String Literal
-print(mensagem)
+print(f"O valor de B é {b}")
