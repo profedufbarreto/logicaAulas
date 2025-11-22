@@ -1,5 +1,7 @@
-a = 4
-b = a + 2
-c = b + 2
+#Entrada de dados
 
-print(f"O valor de C é {c}")
+a = int(input("Digite um valor para a: "))
+nome = input("Digite o seu nome: ")
+
+print(f"O número digitado é {a}")
+print(f"Seu nome é {nome}")
