@@ -1,16 +1,25 @@
 #include <iostream>
 
-float celsiusParaFahrenheit(float c) {
-    return (c * 1.8) + 32;
+bool ehPrimo(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; i++) { // Otimizacao: vai ate a raiz quadrada
+        if (n % i == 0) return false;
+    }
+    return true;
 }
 
 int main() {
-    float tempC;
-    std::cout << "Digite a temperatura em Celsius: ";
-    std::cin >> tempC;
+    int inicio, fim;
+    std::cout << "Digite o inicio e o fim do intervalo: ";
+    std::cin >> inicio >> fim;
 
-    float resultado = celsiusParaFahrenheit(tempC);
-    std::cout << tempC << "C equivale a " << resultado << "F" << std::endl;
+    std::cout << "Numeros primos encontrados: " << std::endl;
+    for (int i = inicio; i <= fim; i++) {
+        if (ehPrimo(i)) {
+            std::cout << i << " ";
+        }
+    }
+    std::cout << std::endl;
 
     return 0;
 }
