@@ -1,27 +1,29 @@
 #include <iostream>
 #include <string>
 
-void encriptar(std::string &texto, int pulo) {
-    for (int i = 0; i < texto.length(); i++) {
-        // Verifica se e uma letra minuscula ou maiuscula
-        if (isalpha(texto[i])) {
-            texto[i] = texto[i] + pulo;
-        }
+void inverterTexto(std::string &texto) {
+    int inicio = 0;
+    int fim = texto.length() - 1;
+
+    while (inicio < fim) {
+        char temp = texto[inicio];
+        texto[inicio] = texto[fim];
+        texto[fim] = temp;
+
+        inicio++;
+        fim--;
     }
 }
 
 int main() {
-    std::string mensagem;
-    int chave;
+    std::string palavra;
 
-    std::cout << "Digite uma palavra (sem espacos): ";
-    std::cin >> mensagem;
-    std::cout << "Digite o valor do deslocamento: ";
-    std::cin >> chave;
+    std::cout << "Digite uma palavra: ";
+    std::cin >> palavra;
 
-    encriptar(mensagem, chave);
+    inverterTexto(palavra);
 
-    std::cout << "Mensagem criptografada: " << mensagem << std::endl;
+    std::cout << "Invertida: " << palavra << std::endl;
 
     return 0;
 }
