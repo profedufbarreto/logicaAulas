@@ -1,25 +1,27 @@
 #include <iostream>
+#include <string>
 
-bool ehPrimo(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i * i <= n; i++) { // Otimizacao: vai ate a raiz quadrada
-        if (n % i == 0) return false;
+void encriptar(std::string &texto, int pulo) {
+    for (int i = 0; i < texto.length(); i++) {
+        // Verifica se e uma letra minuscula ou maiuscula
+        if (isalpha(texto[i])) {
+            texto[i] = texto[i] + pulo;
+        }
     }
-    return true;
 }
 
 int main() {
-    int inicio, fim;
-    std::cout << "Digite o inicio e o fim do intervalo: ";
-    std::cin >> inicio >> fim;
+    std::string mensagem;
+    int chave;
 
-    std::cout << "Numeros primos encontrados: " << std::endl;
-    for (int i = inicio; i <= fim; i++) {
-        if (ehPrimo(i)) {
-            std::cout << i << " ";
-        }
-    }
-    std::cout << std::endl;
+    std::cout << "Digite uma palavra (sem espacos): ";
+    std::cin >> mensagem;
+    std::cout << "Digite o valor do deslocamento: ";
+    std::cin >> chave;
+
+    encriptar(mensagem, chave);
+
+    std::cout << "Mensagem criptografada: " << mensagem << std::endl;
 
     return 0;
 }
