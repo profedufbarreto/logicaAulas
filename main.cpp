@@ -1,19 +1,16 @@
-#include<iostream>
+#include <iostream>
 
-int main(){
+float celsiusParaFahrenheit(float c) {
+    return (c * 1.8) + 32;
+}
 
-    //Comentário
+int main() {
+    float tempC;
+    std::cout << "Digite a temperatura em Celsius: ";
+    std::cin >> tempC;
 
-    int a = 5;
-    float b = 3.45;
-    char c = 'E';
-    double d = 5.9;
-
-    std::cout<<a<<std::endl;
-    std::cout<<b<<std::endl;
-    std::cout<<c<<std::endl;
-    std::cout<<d<<std::endl;
-
+    float resultado = celsiusParaFahrenheit(tempC);
+    std::cout << tempC << "C equivale a " << resultado << "F" << std::endl;
 
     return 0;
 }
