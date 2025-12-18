@@ -1,29 +1,29 @@
 #include <iostream>
-#include <string>
 
-void inverterTexto(std::string &texto) {
-    int inicio = 0;
-    int fim = texto.length() - 1;
-
-    while (inicio < fim) {
-        char temp = texto[inicio];
-        texto[inicio] = texto[fim];
-        texto[fim] = temp;
-
-        inicio++;
-        fim--;
+int buscarProduto(int ids[], int tamanho, int idProcurado) {
+    for (int i = 0; i < tamanho; i++) {
+        if (ids[i] == idProcurado) {
+            return i; // Retorna a posicao (indice)
+        }
     }
+    return -1; // Indica que nao encontrou
 }
 
 int main() {
-    std::string palavra;
+    int listaIDs[5] = {101, 202, 303, 404, 505};
+    int quantidades[5] = {15, 8, 20, 3, 50};
+    
+    int consulta;
+    std::cout << "Digite o ID do produto para consultar estoque: ";
+    std::cin >> consulta;
 
-    std::cout << "Digite uma palavra: ";
-    std::cin >> palavra;
+    int indice = buscarProduto(listaIDs, 5, consulta);
 
-    inverterTexto(palavra);
-
-    std::cout << "Invertida: " << palavra << std::endl;
+    if (indice != -1) {
+        std::cout << "Produto encontrado! Quantidade em estoque: " << quantidades[indice] << std::endl;
+    } else {
+        std::cout << "Erro: Produto com ID " << consulta << " nao cadastrado." << std::endl;
+    }
 
     return 0;
 }
