@@ -1,57 +1,70 @@
 #include <iostream>
 
-// Funcao para calcular a media
-float calcularMedia(float notas[], int tam) {
-    float soma = 0;
-    for (int i = 0; i < tam; i++) {
-        soma += notas[i];
-    }
-    return soma / tam;
+// Função que apenas exibe o saldo (Passagem por Valor - apenas leitura)
+void exibirSaldo(float saldo) {
+    std::cout << "\n================================" << std::endl;
+    std::cout << "SALDO ATUAL: R$ " << saldo << std::endl;
+    std::cout << "================================" << std::endl;
 }
 
-// Funcao para contar alunos acima da media
-int contarAcimaDaMedia(float notas[], int tam, float media) {
-    int contador = 0;
-    for (int i = 0; i < tam; i++) {
-        if (notas[i] >= media) {
-            contador++;
-        }
+// Função para depositar (Passagem por Referência - altera o original)
+void depositar(float &saldo, float valor) {
+    if (valor > 0) {
+        saldo += valor;
+        std::cout << "Deposito de R$ " << valor << " realizado com sucesso!" << std::endl;
+    } else {
+        std::cout << "Valor de deposito invalido!" << std::endl;
     }
-    return contador;
 }
 
-// NOVA FUNCAO: Encontra o maior valor no array
-float acharMaiorNota(float notas[], int tam) {
-    float maior = notas[0]; // Assume que a primeira e a maior
-    for (int i = 1; i < tam; i++) {
-        if (notas[i] > maior) {
-            maior = notas[i]; // Atualiza se encontrar uma nota maior
-        }
+// Função para sacar (Passagem por Referência e Retorno Booleano)
+bool sacar(float &saldo, float valor) {
+    if (valor > 0 && valor <= saldo) {
+        saldo -= valor;
+        return true; // Saque permitido
     }
-    return maior;
+    return false; // Saldo insuficiente ou valor inválido
 }
 
 int main() {
-    const int TAM = 5;
-    float notas[TAM];
+    float meuSaldo = 500.0; // Saldo inicial
+    int opcao = 0;
+    float valorAux;
 
-    std::cout << "--- SISTEMA DE NOTAS ---" << std::endl;
+    while (opcao != 4) {
+        std::cout << "\n--- MENU BANCARIO ---" << std::endl;
+        std::cout << "1. Ver Saldo" << std::endl;
+        std::cout << "2. Depositar" << std::endl;
+        std::cout << "3. Sacar" << std::endl;
+        std::cout << "4. Sair" << std::endl;
+        std::cout << "Escolha uma opcao: ";
+        std::cin >> opcao;
 
-    for (int i = 0; i < TAM; i++) {
-        std::cout << "Digite a nota do aluno " << i + 1 << ": ";
-        std::cin >> notas[i];
+        switch (opcao) {
+            case 1:
+                exibirSaldo(meuSaldo);
+                break;
+            case 2:
+                std::cout << "Digite o valor para deposito: ";
+                std::cin >> valorAux;
+                depositar(meuSaldo, valorAux);
+                break;
+            case 3:
+                std::cout << "Digite o valor para saque: ";
+                std::cin >> valorAux;
+                if (sacar(meuSaldo, valorAux)) {
+                    std::cout << "Saque de R$ " << valorAux << " efetuado!" << std::endl;
+                } else {
+                    std::cout << "ERRO: Saldo insuficiente ou valor invalido!" << std::endl;
+                }
+                break;
+            case 4:
+                std::cout << "Encerrando sistema... Ate logo!" << std::endl;
+                break;
+            default:
+                std::cout << "Opcao invalida!" << std::endl;
+        }
     }
-
-    // Chamadas das funcoes
-    float mediaFinal = calcularMedia(notas, TAM);
-    int aprovados = contarAcimaDaMedia(notas, TAM, mediaFinal);
-    float maiorNota = acharMaiorNota(notas, TAM);
-
-    // Relatorio
-    std::cout << "\n--- RELATORIO FINAL ---" << std::endl;
-    std::cout << "Media da turma: " << mediaFinal << std::endl;
-    std::cout << "Alunos acima ou na media: " << aprovados << std::endl;
-    std::cout << "A maior nota da turma foi: " << maiorNota << std::endl;
 
     return 0;
 }
