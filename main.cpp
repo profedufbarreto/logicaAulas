@@ -1,28 +1,54 @@
 #include <iostream>
+#include <string>
+#include <cctype> // Necessário para isupper, islower e isdigit
 
-int buscarProduto(int ids[], int tamanho, int idProcurado) {
-    for (int i = 0; i < tamanho; i++) {
-        if (ids[i] == idProcurado) {
-            return i; // Retorna a posicao (indice)
-        }
+int avaliarSenha(std::string senha) {
+    int score = 0;
+    bool temMaiuscula = false;
+    bool temMinuscula = false;
+    bool temNumero = false;
+
+    // Regra 1: Comprimento
+    if (senha.length() >= 8) {
+        score += 25;
     }
-    return -1; // Indica que nao encontrou
+
+    // Percorre a string para verificar os tipos de caracteres
+    for (int i = 0; i < senha.length(); i++) {
+        if (isupper(senha[i])) temMaiuscula = true;
+        if (islower(senha[i])) temMinuscula = true;
+        if (isdigit(senha[i])) temNumero = true;
+    }
+
+    // Regra 2: Maiúsculas
+    if (temMaiuscula) score += 25;
+    
+    // Regra 3: Minúsculas
+    if (temMinuscula) score += 25;
+    
+    // Regra 4: Números
+    if (temNumero) score += 25;
+
+    return score;
 }
 
 int main() {
-    int listaIDs[5] = {101, 202, 303, 404, 505};
-    int quantidades[5] = {15, 8, 20, 3, 50};
+    std::string senhaUsuario;
     
-    int consulta;
-    std::cout << "Digite o ID do produto para consultar estoque: ";
-    std::cin >> consulta;
+    std::cout << "--- ANALISADOR DE SEGURANCA ---" << std::endl;
+    std::cout << "Digite sua senha para teste: ";
+    std::cin >> senhaUsuario;
 
-    int indice = buscarProduto(listaIDs, 5, consulta);
+    int forca = avaliarSenha(senhaUsuario);
 
-    if (indice != -1) {
-        std::cout << "Produto encontrado! Quantidade em estoque: " << quantidades[indice] << std::endl;
+    std::cout << "Pontuacao de seguranca: " << forca << "/100" << std::endl;
+
+    if (forca == 100) {
+        std::cout << "Status: SENHA MUITO FORTE!" << std::endl;
+    } else if (forca >= 50) {
+        std::cout << "Status: Senha aceitavel, mas pode melhorar." << std::endl;
     } else {
-        std::cout << "Erro: Produto com ID " << consulta << " nao cadastrado." << std::endl;
+        std::cout << "Status: SENHA FRACA! Risco de seguranca." << std::endl;
     }
 
     return 0;
