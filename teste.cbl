@@ -1,0 +1,17 @@
+    IDENTIFICATION DIVISION.
+    PROGRAM-ID. SOMA-SIMPLES.
+
+    DATA DIVISION.
+    WORKING-STORAGE SECTION.
+    *> Definição de variáveis numéricas de até 5 dígitos
+    01 NUM1         PIC 9(05) VALUE 10.
+    01 NUM2         PIC 9(05) VALUE 20.
+    01 RESULTADO    PIC 9(06).
+
+    PROCEDURE DIVISION.
+        *>Realiza a soma: RESULTADO = NUM1 + NUM2
+        ADD NUM1 TO NUM2 GIVING RESULTADO.
+
+        DISPLAY "O RESULTADO DA SOMA E: " RESULTADO.
+
+        STOP RUN.
