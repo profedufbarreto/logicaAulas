@@ -1,39 +1,23 @@
 #include<iostream>
+#include<string>
 
-int somar(int a, int b){
-    return a + b;
-}
-
-int subtrair(int a, int b){
-    return a - b;
+void identificacao(std::string nome, int idade){
+    std::cout<<nome<<" cadastrado com sucesso!"<<std::endl;
+    std::cout<<"Idade: "<<idade<<" anos.";
 }
 
 int main(){
 
-    int a, b;
-    int opcao, resultado;
+    std::string meuNome;
+    int minhaIdade;
 
-    std::cout<<"Digite um valor para a: ";
-    std::cin>>a;
+    std::cout<<"Digite seu nome: ";
+    std::cin>>meuNome;
 
-    std::cout<<"Digite um valor para b: ";
-    std::cin>>b;
+    std::cout<<"Digite sua idade: ";
+    std::cin>>minhaIdade;
 
-    std::cout<<"Digite uma opção: ";
-    std::cin>>opcao;
+    identificacao(meuNome, minhaIdade);
 
-    switch(opcao){
-        case 1:
-        resultado = somar(a, b);
-        std::cout<<"O resultado é: "<<resultado<<std::endl;
-        break;
-        case 2:
-        resultado = subtrair(a, b);
-        std::cout<<"O resultado é: "<<resultado<<std::endl;
-        break;
-        default:
-        std::cout<<"Você digitou um valor inválido!";
-    }
-
-
+    return 0;
 }

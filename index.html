@@ -9,27 +9,25 @@
     
     <h1>Fazendo testes lógicos!</h1>
 
-    <h2>Qual é o seu nome?</h2>
+    <h2>Vamos calcular?</h2>
 
-    <label for="campoNome">Digite seu nome: </label><br>
-    <input type="text" id="campoNome" placeholder="Digite seu nome aqui:">
+    <input type="number" id="num1" placeholder="Digite um valor para num1: ">
+    <br>
+    <input type="number" id="num2" placeholder="Digite um valor para num2: ">
+    <br>
 
-    <br><br>
+    <button onclick="somar()">Calcular</button>
 
-    <label for="campoSobrenome">Digite seu sobrenome: </label><br>
-    <input type="text" id="campoSobrenome" placeholder="Digite seu sobrenome aqui:">
-
-
-    <button onclick="saudar()">Dizer Olá</button>
-
-    <p id="mensagem"></p>
+    <p>Resultaod:<span id="resultado">0</span></p>
 
     <script>
-        function saudar(){
-            let nome = document.getElementById('campoNome').value;
-            let sobrenome = document.getElementById('campoSobrenome').value;
+        function somar(){
+            let a = document.getElementById('num1').value;
+            let b = document.getElementById('num2').value;
 
-            let frase = "Olá, " + nome + " " + sobrenome + "! Seja bem-vindo(a).";
+            soma =  number(a) + number(b);
+
+            let frase = "O resultado é: " + soma;
 
             document.getElementById('mensagem').innerText = frase;
         }
