@@ -1,17 +1,39 @@
 #include<iostream>
 
-void minhaFuncao(std::string nome){
-    std::cout<<"Olá "<<nome<<std::endl;
+int somar(int a, int b){
+    return a + b;
+}
+
+int subtrair(int a, int b){
+    return a - b;
 }
 
 int main(){
 
-    std::string meuNome;
+    int a, b;
+    int opcao, resultado;
 
-    std::cout<<"Digite seu nome: "<<std::endl;
-    std::cin>>meuNome;
+    std::cout<<"Digite um valor para a: ";
+    std::cin>>a;
 
-    minhaFuncao(meuNome);
+    std::cout<<"Digite um valor para b: ";
+    std::cin>>b;
 
-    return 0;
+    std::cout<<"Digite uma opção: ";
+    std::cin>>opcao;
+
+    switch(opcao){
+        case 1:
+        resultado = somar(a, b);
+        std::cout<<"O resultado é: "<<resultado<<std::endl;
+        break;
+        case 2:
+        resultado = subtrair(a, b);
+        std::cout<<"O resultado é: "<<resultado<<std::endl;
+        break;
+        default:
+        std::cout<<"Você digitou um valor inválido!";
+    }
+
+
 }
