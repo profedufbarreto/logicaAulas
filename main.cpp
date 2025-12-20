@@ -1,18 +1,21 @@
 #include<iostream>
 
+void tabuada(int tab){
+    int numeros[11] = {0,1,2,3,4,5,6,7,8,9,10};
+    for(int i = 0; i <= 10; i++){
+        int resultado = tab * numeros[i];
+        std::cout<<"O resultado é: "<<tab<<" * "<<numeros[i]<<" = "<<resultado<<std::endl;
+    }
+}
+
 int main(){
 
-    int tab, resultado;
+    int tab;
 
-    int numeros[11] = {0,1,2,3,4,5,6,7,8,9,10};
-
-    std::cout<<"Digite o valor para a tabuada: ";
+    std::cout<<"Digite a tabuada desejada: ";
     std::cin>>tab;
 
-    for(int i = 0; i <= 10; i++){
-        resultado = tab * numeros[i];
-        std::cout<<"O resultado de: "<<tab<<" * "<<numeros[i]<<" = "<<resultado<<std::endl;
-    }
+    tabuada(tab);
 
 
 
