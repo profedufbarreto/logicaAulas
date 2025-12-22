@@ -1,15 +1,18 @@
-#include<iostream>
 
-int main(){
+#include <iostream>
 
-    int idade;
+int main() {
+    int n = -1;  // começa inválido para entrar no while
 
-    do{
-        std::cout<<"Digite a sua idade: "<<std::endl;
-        std::cin>>idade;
-    }while(idade >=0 && idade <= 110);
+    std::cout << "Digite um numero entre 1 e 10: ";
+    std::cin >> n;
 
-    std::cout<<"Digite uma idade válida!"<<std::endl;
+    // Enquanto for inválido, continue pedindo
+    while (n < 1 || n > 10) {
+        std::cout << "Valor invalido! Digite novamente (1..10): ";
+        std::cin >> n;
+    }
 
+    std::cout << "Valor valido: " << n << "\n";
     return 0;
 }
