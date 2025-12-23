@@ -1,18 +1,22 @@
-
 #include <iostream>
+#include<math.h>
 
 int main() {
-    int n = -1;  // começa inválido para entrar no while
+    
+    //Eleve 2, até o número escolhido.
+    int num;
+    int base = 2;
+    int resultado;
+    int elevacao[10] = {1,2,3,4,5,6,7,8,9,10};
 
-    std::cout << "Digite um numero entre 1 e 10: ";
-    std::cin >> n;
+    std::cout<<"Digite um número: ";
+    std::cin>>num;
 
-    // Enquanto for inválido, continue pedindo
-    while (n < 1 || n > 10) {
-        std::cout << "Valor invalido! Digite novamente (1..10): ";
-        std::cin >> n;
+    for(int i = 1; i <= num; i++){
+        resultado = pow(base, elevacao[i-1]);
+        std::cout<<"O resultado é: "<<resultado<<std::endl;
     }
+    
 
-    std::cout << "Valor valido: " << n << "\n";
     return 0;
 }
