@@ -1,22 +1,30 @@
-#include <iostream>
-#include<math.h>
+#include<iostream>
 
-int main() {
-    
-    //Eleve 2, até o número escolhido.
-    int num;
-    int base = 2;
-    int resultado;
-    int elevacao[10] = {1,2,3,4,5,6,7,8,9,10};
+int main(){
 
-    std::cout<<"Digite um número: ";
-    std::cin>>num;
+    int lado1, lado2, lado3;
 
-    for(int i = 1; i <= num; i++){
-        resultado = pow(base, elevacao[i-1]);
-        std::cout<<"O resultado é: "<<resultado<<std::endl;
+    std::cout<<"Digite o lado 1: "<<std::endl;
+    std::cin>>lado1;
+
+    std::cout<<"Digite o lado 2: "<<std::endl;
+    std::cin>>lado2;
+
+    std::cout<<"Digite o lado 3: "<<std::endl;
+    std::cin>>lado3;
+
+    if(lado1 == lado2 && lado1 == lado3){
+        std::cout<<"Todos os lados são iguais."<<std::endl;
+        std::cout<<"Triângulo Equilátero!"<<std::endl;
+    }else if(lado1 == lado2 || lado1 == lado3 || lado2 == lado3){
+        std::cout<<"Apenas dois lados iguais."<<std::endl;
+        std::cout<<"Triângulo Isósceles."<<std::endl;
+    }else if(lado1 != lado2 && lado1 != lado3){
+        std::cout<<"Todos os lados são diferentes."<<std::endl;
+        std::cout<<"Triângulo Escaleno."<<std::endl;
+    }else{
+        std::cout<<"Isso não é um triângulo!"<<std::endl;
     }
-    
 
     return 0;
 }
