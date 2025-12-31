@@ -1,49 +1,27 @@
 #include<iostream>
+#include<math.h>
 
-void lados(){
-    int lado1, lado2, lado3;
-}
-
-void lerLados(int &a, int &b, int &c){
-
-    std::cout<<"Digite o lado 1: "<<std::endl;
-    std::cin>>a;
-
-    std::cout<<"Digite o lado 2: "<<std::endl;
-    std::cin>>b;
-
-    std::cout<<"Digite o lado 3: "<<std::endl;
-    std::cin>>c;
-}
-
-void verificarTriangulos(){
-
-    int lado1, lado2, lado3;
-
-    lerLados(lado1, lado2, lado3);
-
-    if(lado1 + lado2 <= lado3 || lado2 + lado3 <= lado1 ||
-        lado1 + lado3 <= lado2){
-            std::cout<<"Isso não é um triângulo!"<<std::endl;
-            return;
-        }
+void lerDiametro(double &r){
     
-
-    if(lado1 == lado2 && lado1 == lado3){
-        std::cout<<"Todos os lados são iguais."<<std::endl;
-        std::cout<<"Triângulo Equilátero."<<std::endl;
-    }else if(lado1 != lado2 && lado2 != lado3 && lado1 != lado3){
-        std::cout<<"Todos os lados diferentes."<<std::endl;
-        std::cout<<"Triângulo Escaleno."<<std::endl;
-    }else{
-        std::cout<<"Triângulo Isósceles."<<std::endl;
-    }
+    std::cout<<"Digite o raio do círculo: "<<std::endl;
+    std::cin>>r;
+    
 }
 
+void calcularDiametro(){
+    double raio, diametro;
+
+    lerDiametro(raio);
+
+    diametro = pow(raio, 2);
+
+    std::cout<<"O valor do diâmetro é de: "<<diametro<<std::endl;
+
+}
 
 int main(){
 
-    verificarTriangulos();
+    calcularDiametro();
 
     return 0;
 }
