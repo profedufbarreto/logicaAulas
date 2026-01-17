@@ -1,56 +1,54 @@
 #include<iostream>
-#include<string.h>
 #include<iomanip>
+#include<string>
+#include<limits>
 
-void gasolina(){
-    float litros, total;
-    const float valor = 6.09;
+void cobrarCombustivel(const std::string& nome, double precoPorLitro){
+    double litros;
     std::cout<<"Quantidade abastecida (litros): "<<std::endl;
-    std::cin>>litros;
-    total = valor * litros;
-    std::cout<<"Seu abastecimento em GASOLINA foi de R$: "<<std::fixed
-        <<std::setprecision(2)<<total<<std::endl;
-}
 
-void etanol(){
-    float litros, total;
-    const float valor = 4.79;
-    std::cout<<"Quantidade abastecida (litros): "<<std::endl;
-    std::cin>>litros;
-    total = valor * litros;
-    std::cout<<"Seu abastecimento em ETANOL foi de R$: "<<std::fixed
-        <<std::setprecision(2)<<total<<std::endl;
-}
+    if(!(std::cin >> litros)){
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout<<"Entrada inválida. Tente novamente. \n";
+        return;
+    }
 
-void diesel(){
-    float litros, total;
-    const float valor = 5.99;
-    std::cout<<"Quantidade abastecida (litros): "<<std::endl;
-    std::cin>>litros;
-    total = valor * litros;
-    std::cout<<"Seu abastecimento em DIESEL foi de R$: "<<std::fixed
-        <<std::setprecision(2)<<total<<std::endl;
+    if(litros <= 0.0){
+        std::cout<<"Quantidade deve ser maior que zero.\n";
+        return;
+    }
+
+    double total = precoPorLitro * litros;
+
+    std::cout<<std::fixed<<std::setprecision(2);
+    std::cout<<"Seu abastecimento em "<<nome
+             <<" foi de R$: "<<total<<'\n';
+
 }
 
 int main(){
 
-    int comb;
+    std::cout<<std::fixed<<std::setprecision(2);
 
-    std::cout<<"-------------"<<std::endl;
-    std::cout<<"1 - GASOLINA"<<std::endl;
-    std::cout<<"2 - ETANOL"<<std::endl;
-    std::cout<<"3 - DIESEL"<<std::endl;
-    std::cout<<"-------------"<<std::endl;
-    std::cin>>comb;
+    constexpr double precoGasolina = 6.09;
+    constexpr double precoEtanol = 4.79;
+    constexpr double precoDiesel = 5.99;
 
-    if(comb == 1){
-        gasolina();
-    }else if(comb ==2){
-        etanol();
-    }else if(comb == 3){
-        diesel();
-    }else{
-        std::cout<<"Digitação incorreta!"<<std::endl;
+    int opcao;
+
+    std::cout<<"------------\n";
+    std::cout<<"1 - GASOLINA (R$ " <<precoGasolina<<")\n";
+    std::cout<<"2 - ETANOL (R$ "<<precoEtanol<<")\n";
+    std::cout<<"3 - DIESEL (R$ "<<precoDiesel<<")\n";
+    std::cout<<"------------\n";
+    std::cin>>opcao;
+
+    switch(opcao){
+        case 1: cobrarCombustivel("GASOLINA", precoGasolina); break;
+        case 2: cobrarCombustivel("ETANOL", precoEtanol); break;
+        case 3: cobrarCombustivel("DIESEL", precoDiesel); break;
+        default: std::cout<<"Opção inválida!\n";
     }
 
     return 0;
