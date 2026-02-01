@@ -1,21 +1,18 @@
 #include<iostream>
-#include<limits>
-#include<string>
+
 
 int main(){
 
-    int idade;
-    std::string nome;
+    int num;
 
-    std::cout<<"Qual sua idade: "<<std::endl;
-    std::cin>>idade;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cout<<"Digite um número: "<<std::endl;
+    std::cin>>num;
 
-    std::cout<<"Qual seu nome: "<<std::endl;
-    std::getline(std::cin, nome);
-
-    std::cout<<"Seu nome é: "<<nome<<std::endl;
-    std::cout<<"Sua idade é: "<<idade<<std::endl;
+    if(num >= 0){
+        std::cout<<"Este número é positivo!"<<std::endl;
+    }else{
+        std::cout<<"Este número é negativo!"<<std::endl;
+    }
 
     return 0;
 }
