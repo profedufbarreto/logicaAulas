@@ -8,9 +8,7 @@ int main(){
     std::cout<<"Digite seu nome: "<<std::endl;
     std::cin>>nome;
 
-    nome.assign("Senac");
-
-    std::cout<<nome<<std::endl;
+    std::cout<<nome[1]<<std::endl;
     
 
     return 0;
