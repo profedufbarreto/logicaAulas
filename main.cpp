@@ -1,18 +1,17 @@
 #include<iostream>
-
+#include<string>
 
 int main(){
 
-    int num;
+    std::string nome, sobrenome;
 
-    std::cout<<"Digite um número: "<<std::endl;
-    std::cin>>num;
+    std::cout<<"Digite seu nome: "<<std::endl;
+    std::cin>>nome;
 
-    if(num >= 0){
-        std::cout<<"Este número é positivo!"<<std::endl;
-    }else{
-        std::cout<<"Este número é negativo!"<<std::endl;
-    }
+    std::cout<<"Digite seu sobrenome: "<<std::endl;
+    std::cin>>sobrenome;
+
+    std::cout<<nome + " " + sobrenome;
 
     return 0;
 }
