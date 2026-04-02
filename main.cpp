@@ -3,15 +3,15 @@
 
 int main(){
 
-    std::string nome, sobrenome;
+    std::string nome;
 
     std::cout<<"Digite seu nome: "<<std::endl;
     std::cin>>nome;
 
-    std::cout<<"Digite seu sobrenome: "<<std::endl;
-    std::cin>>sobrenome;
+    nome.assign("Senac");
 
-    std::cout<<nome + " " + sobrenome;
+    std::cout<<nome<<std::endl;
+    
 
     return 0;
 }
