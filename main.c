@@ -2,17 +2,9 @@
 
 int main() {
     
-    int num1, num2, soma;
-
-    printf("Digite um valor para num1: ");
-    scanf("%d", &num1);
-
-    printf("Digite um valor para num2: ");
-    scanf("%d", &num2);
-
-    soma = num1 + num2;
-
-    printf("O resultado de soma é: %d ", soma);
+    for(int i = 0; i <= 10; i++){
+        printf("O resultado incrementa %d\n", i);
+    }
 
     return 0;
 }
