@@ -13,7 +13,7 @@ int multiplicar(int a, int b){
 }
 
 float dividir(float a, float b){
-    if(a <= 0){
+    if(b == 0){
         printf("\nDigite um valor maior que 0!");
     }else{
         return a / b;
@@ -54,6 +54,9 @@ int main() {
             printf("\nO resultado é %d\n", resultado);
         break;
         case 4: 
+            if(num2 == 0){
+                return 1;
+            }
             resultado = dividir(num1, num2);
             printf("\nO resultado é %.2f\n", resultado);
         break;
