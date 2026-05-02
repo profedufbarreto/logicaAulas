@@ -1,10 +1,12 @@
 #include <stdio.h>
 
+void ola(){
+    printf("Olá mundo!!");
+}
+
 int main() {
     
-    for(int i = 0; i <= 10; i++){
-        printf("O resultado incrementa %d\n", i);
-    }
+    ola();
 
     return 0;
 }
