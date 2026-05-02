@@ -14,7 +14,7 @@ int multiplicar(int a, int b){
 
 float dividir(float a, float b){
     if(a <= 0){
-        printf("Digite um valor maior que 0!");
+        printf("\nDigite um valor maior que 0!");
     }else{
         return a / b;
     }
@@ -23,7 +23,7 @@ float dividir(float a, float b){
 int main() {
     
     int num1, num2;
-    int resultado;
+    float resultado;
     int opcao;
 
     printf("----- Bem-vindos a uma simples calculadora em C: -----");
@@ -43,22 +43,22 @@ int main() {
     switch(opcao){
         case 1:
             resultado = somar(num1, num2);
-            printf("O resultado é %d\n", resultado);
+            printf("\nO resultado é %d\n", resultado);
         break;
         case 2:
             resultado = subtrair(num1, num2);
-            printf("O resultado é %d\n", resultado);
+            printf("\nO resultado é %d\n", resultado);
         break;
-        case3:
+        case 3:
             resultado = multiplicar(num1, num2);
-            printf("O resultado é %d\n", resultado);
+            printf("\nO resultado é %d\n", resultado);
         break;
         case 4: 
             resultado = dividir(num1, num2);
-            printf("O resultado é %d\n", resultado);
+            printf("\nO resultado é %.2f\n", resultado);
         break;
         default:
-            printf("Você digitou um valor inválido!");
+            printf("\nVocê digitou um valor inválido!");
         break;
     }
 
