@@ -1,28 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    char nome[50];
-    int idade;
-    double salario, altura;
+    
+    int num1, num2, soma;
 
-    printf("Digite o seu nome: ");
-    scanf("%s", nome); // Sem o & para strings
+    printf("Digite um valor para num1: ");
+    scanf("%d", &num1);
 
-    printf("Digite a sua idade: ");
-    scanf("%d", &idade);
+    printf("Digite um valor para num2: ");
+    scanf("%d", &num2);
 
-    printf("Digite a sua altura: ");
-    scanf("%lf", &altura); // Apenas %lf, sem o ".2"
+    soma = num1 + num2;
 
-    printf("Digite o seu salario: ");
-    scanf("%lf", &salario); // Apenas %lf
-
-    // No PRINTF você pode usar o %.2
-    printf("\n--- Dados Cadastrados ---\n");
-    printf("Nome: %s\n", nome);
-    printf("Idade: %d\n", idade);
-    printf("Altura: %.2lf\n", altura);
-    printf("Salario: %.2lf\n", salario);
+    printf("O resultado de soma é: %d ", soma);
 
     return 0;
 }
