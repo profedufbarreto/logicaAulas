@@ -1,21 +1,30 @@
 #include<iostream>
 #include<string>
 
-void dizerNome(std::string n, int a){
+void fazerCadastro(std::string n, std::string c, std::string da){
     std::cout<<"Digite o seu nome: "<<std::endl;
-    std::cin>>n;
-    std::cout<<"Digite sua idade: "<<std::endl;
-    std::cin>>a;
-    std::cout<<"Seu nome é: "<<n<<std::endl;
-    std::cout<<"Você tem "<<a<<" anos."<<std::endl;
+    std::getline(std::cin, n);
+    std::cout<<"Digite o seu CPF: "<<std::endl;
+    std::getline(std::cin, c);
+    std::cout<<"Digite a sua data de nascimento: "<<std::endl;
+    std::getline(std::cin, da);
+
+    std::cout<<"\n\nSeja bem-vindo "<<n<<std::endl;
+    std::cout<<"O seu CPF é "<<c<<std::endl;
+    std::cout<<"Sua data de nascimento é "<<da<<std::endl;
+    std::cout<<"\n\n";
 }
+
+
 
 int main(){
 
     std::string nome;
-    int age;
+    std::string cpf;
+    std::string dataDeNascimento;
 
-    dizerNome(nome, age);
+    fazerCadastro(nome, cpf, dataDeNascimento);
+
 
     return 0;
 }
