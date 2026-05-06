@@ -1,28 +1,30 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    char nome[50];
-    int idade;
-    double salario, altura;
+int main(){
 
-    printf("Digite o seu nome: ");
-    scanf("%s", nome); // Sem o & para strings
+    float distancia, consumo, precoLitro, litros;
+    float custoTotal;
 
-    printf("Digite a sua idade: ");
-    scanf("%d", &idade);
+    printf("Qual a distância da viagem: ");
+    scanf("%f", &distancia);
 
-    printf("Digite a sua altura: ");
-    scanf("%lf", &altura); // Apenas %lf, sem o ".2"
+    printf("Qual o consumo médio do veículo: ");
+    scanf("%f", &consumo);
 
-    printf("Digite o seu salario: ");
-    scanf("%lf", &salario); // Apenas %lf
+    printf("Qual valor do litro do combustível: ");
+    scanf("%f", &precoLitro);
 
-    // No PRINTF você pode usar o %.2
-    printf("\n--- Dados Cadastrados ---\n");
-    printf("Nome: %s\n", nome);
-    printf("Idade: %d\n", idade);
-    printf("Altura: %.2lf\n", altura);
-    printf("Salario: %.2lf\n", salario);
+    litros = distancia / consumo;
+    custoTotal = litros * precoLitro;
+
+    if(custoTotal >= 100){
+        printf("\nViagem cara! Considere dividir os custos!");
+        (distancia >= 100) ? printf("\nViagem longa!") : printf("\nViagem curta!");
+        printf("\nViagem custará %.2f\n", custoTotal);
+    }else{
+        printf("\nO custo está dentro do orçamento!");
+        (distancia >= 100) ? printf("\nViagem longa!") : printf("\nViagem curta!");
+    }
 
     return 0;
 }
