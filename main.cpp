@@ -1,16 +1,24 @@
 #include<iostream>
-#include<cstdlib>
-#include<ctime>
 
-int gerarDado(){
-    return rand() % 6 + 1;
+int somar(int a, int b){
+    return a + b;
 }
 
 int main(){
 
-    srand(time(0));
+    int num1;
+    int num2;
+    int resultado;
 
-    std::cout<<gerarDado()<<std::endl;
+    std::cout<<"Digite um valor para num1: "<<std::endl;
+    std::cin>>num1;
+
+    std::cout<<"Digite um valor para num2: "<<std::endl;
+    std::cin>>num2;
+
+    resultado = somar(num1, num2);
+
+    std::cout<<"O resultado será de: "<<resultado<<std::endl;
 
     return 0;
 }
