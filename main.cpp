@@ -1,18 +1,16 @@
 #include<iostream>
-#include<string>
+#include<cstdlib>
+#include<ctime>
 
-void dizerNome(std::string nome){
-    std::cout<<"Olá "<<nome<<std::endl;
+int gerarDado(){
+    return rand() % 6 + 1;
 }
 
 int main(){
 
-    std::string n;
+    srand(time(0));
 
-    std::cout<<"Qual seu nome: ";
-    std::cin>>n;
-
-    dizerNome(n);
+    std::cout<<gerarDado()<<std::endl;
 
     return 0;
 }
