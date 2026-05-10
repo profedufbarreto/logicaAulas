@@ -1,12 +1,18 @@
 #include<iostream>
+#include<string>
 
-void dizerNome(){
-    std::cout<<"Meu nome é Eduardo!"<<std::endl;
+void dizerNome(std::string nome){
+    std::cout<<"Olá "<<nome<<std::endl;
 }
 
 int main(){
 
-    dizerNome();
+    std::string n;
+
+    std::cout<<"Qual seu nome: ";
+    std::cin>>n;
+
+    dizerNome(n);
 
     return 0;
 }
