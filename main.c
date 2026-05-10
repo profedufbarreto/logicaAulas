@@ -3,7 +3,7 @@
 int main(){
 
     float distancia, consumo, precoLitro, litros;
-    float custoTotal;
+    float custoLitro, custoTotal, consumoTotal;
 
     printf("Qual a distância da viagem: ");
     scanf("%f", &distancia);
