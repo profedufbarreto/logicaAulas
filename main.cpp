@@ -1,54 +1,36 @@
 #include<iostream>
 #include<string>
 
-class Livro{
+class Pessoa{
     private:
-    std::string titulo, autor;
-    int ano;
-    bool emprestado;
+    std::string nome;
+    int idade;
 
     public:
-    Livro(std::string titulo, std::string autor, int ano){
-        this->titulo = titulo;
-        this->autor = autor;
-        this->ano = ano;
-        this->emprestado = false;
+    Pessoa(){
+        nome = "";
+        idade = 0;
     }
 
-    void emprestar(){
-        if(!emprestado){
-            emprestado = true;
-            std::cout<<"Livro: "<<titulo<<" emprestado com sucesso!"<<std::endl;
-        }else{
-            std::cout<<"Este livro já está empresado!"<<std::endl;
-        }
-    }
+    void cadastrar(){
+        std::cout<<"Digite o nome: "<<std::endl;
+        std::cin>>nome;
 
-    void devolver(){
-        if(emprestado){
-            emprestado = false;
-            std::cout<<"Livro "<<titulo<<" devolvido com sucesso!"<<std::endl;
-        }else{
-            std::cout<<"Este livro não estava emprestado!"<<std::endl;
-        }
+        std::cout<<"Digite a idade: "<<std::endl;
+        std::cin>>idade;
     }
 
     void exibirInfo(){
-        std::string status = emprestado ? "Emprestado" : "Disponível";
-        std::cout<<"Título: "<<titulo<<std::endl;
-        std::cout<<"Autor: "<<autor<<std::endl;
-        std::cout<<"Ano: "<<ano<<std::endl;
-        std::cout<<"Status: "<<status<<std::endl;
-        std::cout<<"---"<<std::endl;
+        std::cout<<"O nome é: "<<nome<<std::endl;
+        std::cout<<"Tendo "<<idade<<" anos."<<std::endl;
     }
 };
 
 int main(){
 
-    std::string titulo, autor;
-    int ano;
-
-    Livro livro1(titulo, autor, ano);
+    Pessoa p1;
+    p1.cadastrar();
+    p1.exibirInfo();
 
     return 0;
 }
