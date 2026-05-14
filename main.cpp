@@ -1,36 +1,42 @@
 #include<iostream>
 #include<string>
 
-class Pessoa{
+class Carro{
     private:
-    std::string nome;
-    int idade;
+    std::string marca;
+    std::string modelo;
+    int velocidade;
 
     public:
-    Pessoa(std::string nome, int idade){
-        this->nome = nome;
-        this->idade = idade;
+    Carro(){
+        marca = "";
+        modelo = "";
+        velocidade = 0;
     }
 
-    // void cadastrar(){
-    //     std::cout<<"Digite o nome: "<<std::endl;
-    //     std::cin>>nome;
+    void cadastrar(){
+        std::cout<<"Qual a marca: "<<std::endl;
+        std::cin>>marca;
 
-    //     std::cout<<"Digite a idade: "<<std::endl;
-    //     std::cin>>idade;
-    // }
+        std::cout<<"Qual o modelo: "<<std::endl;
+        std::cin>>modelo;
 
-    void exibirInfo(){
-        std::cout<<"O nome é: "<<nome<<std::endl;
-        std::cout<<"Tendo "<<idade<<" anos."<<std::endl;
+        std::cout<<"Velocidade máxima: "<<std::endl;
+        std::cin>>velocidade;
+    }
+
+    void exibirIndo(){
+        std::cout<<"A marca é: "<<marca<<std::endl;
+        std::cout<<"O modelo é: "<<modelo<<std::endl;
+        std::cout<<"A velocidade máxima é: "<<velocidade<<" Km/h"<<std::endl;
     }
 };
 
 int main(){
 
-    Pessoa p1("Eduardo", 38);
-    // p1.cadastrar();
-    p1.exibirInfo();
+    Carro c1;
+    c1.cadastrar();
+    c1.exibirIndo();
 
     return 0;
 }

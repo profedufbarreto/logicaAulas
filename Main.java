@@ -52,9 +52,11 @@ public class Main{
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Digite aqui o nome do titular: ");
+
         nome = sc.nextLine();
 
         System.out.print("Digite aqui o saldo inicial: ");
+        Scanner sc = new Scanner(System.in);
         saldoInicial = sc.nextDouble();
 
         ContaBancaria conta = new ContaBancaria(nome, saldoInicial);
