@@ -1,88 +1,54 @@
 #include<iostream>
+#include<string>
 
-class ContaBancaria{
+class Livro{
     private:
-        std::string titular;
-        double saldo;
+    std::string titulo, autor;
+    int ano;
+    bool emprestado;
 
-        public:
-            ContaBancaria(std::string nome, double saldoInicial = 1000){
-                titular = nome;
-                saldo = saldoInicial;
-            }
+    public:
+    Livro(std::string titulo, std::string autor, int ano){
+        this->titulo = titulo;
+        this->autor = autor;
+        this->ano = ano;
+        this->emprestado = false;
+    }
 
-            void depositar(){
-                double valor;
-                std::cout<<"Digite o valor a depositar: "<<std::endl;
-                std::cin>>valor;
+    void emprestar(){
+        if(!emprestado){
+            emprestado = true;
+            std::cout<<"Livro: "<<titulo<<" emprestado com sucesso!"<<std::endl;
+        }else{
+            std::cout<<"Este livro já está empresado!"<<std::endl;
+        }
+    }
 
-                if(valor > 0){
-                    saldo += valor;
-                    std::cout<<"Depósito realizado!"<<std::endl;
-                }else{
-                    std::cout<<"Valor inválido!"<<std::endl;
-                }
-            }
+    void devolver(){
+        if(emprestado){
+            emprestado = false;
+            std::cout<<"Livro "<<titulo<<" devolvido com sucesso!"<<std::endl;
+        }else{
+            std::cout<<"Este livro não estava emprestado!"<<std::endl;
+        }
+    }
 
-            void sacar(){
-                double valor;
-                std::cout<<"Digite o valor a sacar: ";
-                std::cin>>valor;
-
-                if(valor > 0 && valor <= saldo){
-                    saldo -= valor;
-                    std::cout<<"Saque realizado!"<<std::endl;
-                }else{
-                    std::cout<<"Saldo insuficiente!"<<std::endl;
-                }
-            }
-
-            void exibirSaldo(){
-                std::cout<<titular<<" ----- Saldo R$: "<<saldo<<std::endl;
-            }
+    void exibirInfo(){
+        std::string status = emprestado ? "Emprestado" : "Disponível";
+        std::cout<<"Título: "<<titulo<<std::endl;
+        std::cout<<"Autor: "<<autor<<std::endl;
+        std::cout<<"Ano: "<<ano<<std::endl;
+        std::cout<<"Status: "<<status<<std::endl;
+        std::cout<<"---"<<std::endl;
+    }
 };
 
 int main(){
 
-    std::string nome;
-    double saldoIncial;
+    std::string titulo, autor;
+    int ano;
 
-    std::cout<<"Digite o nome do titular: ";
-    std::cin>>nome;
+    Livro livro1(titulo, autor, ano);
 
-    std::cout<<"Digite o saldo inicial: ";
-    std::cin>>saldoIncial;
-
-    ContaBancaria conta1(nome, saldoIncial);
-
-    int opcao;
-
-    do{
-        std::cout<<"\n ===== MENU ====="<<std::endl;
-        std::cout<<"1 - Ver Saldo"<<std::endl;
-        std::cout<<"2 - Depositar"<<std::endl;
-        std::cout<<"3 - Sacar"<<std::endl;
-        std::cout<<"4 - Sair"<<std::endl;
-        std::cout<<"Digite uma opção: "<<std::endl;
-        std::cin>>opcao;
-
-        switch(opcao){
-            case 1: 
-            conta1.exibirSaldo();
-            break;
-            case 2:
-            conta1.depositar();
-            break;
-            case 3:
-            conta1.sacar();
-            break;
-            case 4:
-            std::cout<<"Saindo..."<<std::endl;
-            break;
-            default:
-            std::cout<<"Opção inválida!"<<std::endl;
-        }
-    }while(opcao !=4);
-    
     return 0;
 }
