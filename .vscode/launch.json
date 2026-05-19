@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "logicaAulas_3b14cec9"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
@@ -10,7 +17,7 @@
       "program": "${workspaceFolder}/build/Debug/outDebug.exe",
       "internalConsoleOptions": "openOnSessionStart",
       "externalConsole": false,
-      "console": "integratedTerminal", 
+      "console": "integratedTerminal",
       "MIMode": "gdb",
       "setupCommands": [
         {
