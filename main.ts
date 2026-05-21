@@ -1,4 +1,5 @@
-const nome: string = "Eduardo";
-const idade: number = 25;
+function saudar(): void{
+    console.log("Olá mundo!");
+}
 
-console.log(`${nome} tem ${idade} anos`);
+saudar();
