@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "ts-node": "^10.9.2"
+  },
+  "name": "logicaaulas",
+  "version": "1.0.0",
+  "description": "Compilar Cobol",
+  "main": "main.js",
+  "dependencies": {
+    "undici-types": "^7.24.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-senac:profedufbarreto/logicaAulas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
