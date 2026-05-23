@@ -1,79 +1,27 @@
-abstract class Forma{
-    nome: string;
+import * as readline from "readline";
 
-    constructor(nome: string){
-        this.nome = nome;
-    }
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-    abstract calcularArea(): number;
-    abstract calcularPerimetro(): number;
-
-    mostrarInfo(): void{
-        console.log(`=== ${this.nome} ===`);
-        console.log(`Área: ${this.calcularArea()}`);
-        console.log(`Perímetro: ${this.calcularPerimetro()}`);
-        console.log("");
-    }
+function perguntar(questao: string): Promise<string>{
+    return new Promise((resolve) => {
+        rl.question(questao, (resposta: string) => {
+            resolve(resposta);
+        });
+    });
 }
 
-class Quadrado extends Forma{
-    lado: number;
+async function main(): Promise<void>{
+    let nome: string = await perguntar("Digite seu nome: ");
+    let idade: number = parseInt(await perguntar("Digite sua idade: "));
 
-    constructor(lado: number){
-        super("Quadrado");
-        this.lado = lado;
-    }
+    console.log("\n ---- DADOS ----");
+    console.log(`Nome: ${nome}`);
+    console.log(`Idade: ${idade}`);
 
-    calcularArea(): number {
-        return this.lado * this.lado;
-    }
-
-    calcularPerimetro(): number {
-        return this.lado * 4;
-    }
+    rl.close();
 }
 
-class Retangulo extends Forma{
-    largura: number;
-    altura: number;
-
-    constructor(largura: number, altura: number){
-        super("Retangulo");
-        this.largura = largura;
-        this.altura = altura;
-    }
-
-    calcularArea(): number {
-        return this.largura * this.altura;
-    }
-
-    calcularPerimetro(): number {
-        return (this.largura + this.altura) * 2;
-    }
-}
-
-class Circulo extends Forma{
-    raio: number;
-
-    constructor(raio: number){
-        super("Circulo");
-        this.raio = raio;
-    }
-
-    calcularArea(): number {
-        return Math.PI * this.raio;
-    }
-
-    calcularPerimetro(): number {
-        return 2 * Math.PI * this.raio;
-    }
-}
-
-let q = new Quadrado(5);
-q.mostrarInfo();
-
-let r = new Retangulo(4, 6);
-r.mostrarInfo();
-
-let c = new Circulo(3);
-c.mostrarInfo();
+main();
