@@ -56,10 +56,10 @@ function perguntar(questao) {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
-        let nome = yield perguntar("Digite seu nome: ");
-        let idade = parseInt(yield perguntar("Digite sua idade: "));
-        console.log("Nome: " + nome);
-        console.log("Idade: " + idade);
+        let num1 = parseInt(yield perguntar("Digite um valor para num1: "));
+        let num2 = parseInt(yield perguntar("Digite um valor para num2: "));
+        let resultado = num1 + num2;
+        console.log(`O resultado é ${resultado}!`);
         rl.close();
     });
 }

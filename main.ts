@@ -1,3 +1,4 @@
+import { resolve } from "dns";
 import * as readline from "readline";
 
 const rl = readline.createInterface({
@@ -5,20 +6,21 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-function perguntar(questao: string): Promise<string> {
-    return new Promise((resolve) => {
+function perguntar(questao: string): Promise<string>{
+    return new Promise((resolve) =>{
         rl.question(questao, (resposta: string) => {
             resolve(resposta);
         });
     });
 }
 
-async function main(): Promise<void> {
-    let nome: string = await perguntar("Digite seu nome: ");
-    let idade: number = parseInt(await perguntar("Digite sua idade: "));
+async function main(): Promise<void>{
+    let num1: number = parseInt(await perguntar("Digite um valor para num1: "));
+    let num2: number = parseInt(await perguntar("Digite um valor para num2: "));
 
-    console.log("Nome: " + nome);
-    console.log("Idade: " + idade);
+    let resultado: number = num1 + num2;
+
+    console.log(`O resultado é ${resultado}!`);
 
     rl.close();
 }
