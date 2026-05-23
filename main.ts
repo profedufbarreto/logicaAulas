@@ -10,7 +10,6 @@ let meuCarro: Carro = {
     ano: 2020
 };
 
-console.log(meuCarro);
-console.log(meuCarro.marca);
-console.log(meuCarro.modelo);
-console.log(meuCarro.ano);
+console.log(`Marca: ${meuCarro.marca}`);
+console.log(`Modelo: ${meuCarro.modelo}`);
+console.log(`Ano: ${meuCarro.ano}`);
