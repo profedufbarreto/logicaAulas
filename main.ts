@@ -1,28 +1,12 @@
-import { resolve } from "dns";
-import * as readline from "readline";
+let a: number = 10;
+let b: number = 20;
+let soma: number = a + b;
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+console.log(`O resultado da soma é ${soma}!`);
 
-function perguntar(questao: string): Promise<string>{
-    return new Promise((resolve) =>{
-        rl.question(questao, (resposta: string) => {
-            resolve(resposta);
-        });
-    });
+function somar(x: number, y: number): number{
+    return x + y;
 }
 
-async function main(): Promise<void>{
-    let num1: number = parseInt(await perguntar("Digite um valor para num1: "));
-    let num2: number = parseInt(await perguntar("Digite um valor para num2: "));
+console.log(somar(5, 10));
 
-    let resultado: number = num1 + num2;
-
-    console.log(`O resultado é ${resultado}!`);
-
-    rl.close();
-}
-
-main();
