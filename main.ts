@@ -1,29 +1,35 @@
-class Animal {
-    nome: string;
+class Pessoa{ 
+    public nome: string;
+    private idade: number;
+    protected cpf: string;
 
-    constructor(nome: string){
+    constructor(nome: string, idade: number, cpf: string){
         this.nome = nome;
+        this.idade = idade;
+        this.cpf = cpf;
     }
 
-    fazerSom(): void{
-        console.log(`${this.nome} faz um som!`);
+    public getIdade(): number{
+        return this.idade;
+    }
+
+    public getCpf(): string{
+        return this.cpf;
+    }
+
+    public setIdade(novaIdade: number): void{
+        if(novaIdade > 0){
+            this.idade = novaIdade;
+        }
+    }
+
+    public saudacao(): void{
+        console.log(`Olá, eu sou o ${this.nome}.`);
     }
 }
 
-class Cachorro extends Animal {
-    fazerSom(): void {
-        console.log(`${this.nome} faz: Au au!!`);
-    }
-}
+let p1 = new Pessoa("Eduardo", 38, "123.456.789-01");
 
-class Gato extends Animal{
-    fazerSom(): void {
-        console.log(`${this.nome} faz: Miauuu!!`);
-    }
-}
-
-let dog = new Cachorro("Rex");
-dog.fazerSom();
-
-let cat = new Gato("Mimi");
-cat.fazerSom();
+console.log(p1.nome);
+console.log(p1.getIdade());
+console.log(p1.getCpf());
