@@ -1,50 +1,79 @@
-abstract class Pagamento{
-    valor: number;
+abstract class Forma{
+    nome: string;
 
-    constructor(valor: number){
-        this.valor = valor;
+    constructor(nome: string){
+        this.nome = nome;
     }
 
-    abstract processar(): void;
+    abstract calcularArea(): number;
+    abstract calcularPerimetro(): number;
 
-    mostrarValor(): void{
-        console.log(`Valor: R$ ${this.valor}`);
-    }
-}
-
-class CartaoCredito extends Pagamento{
-    processar(): void {
-        console.log("Processando pagamento com CARTÃO...");
-        console.log(`Valor: R$${this.valor}`);
-        console.log("Pagamento aprovado!");
+    mostrarInfo(): void{
+        console.log(`=== ${this.nome} ===`);
+        console.log(`Área: ${this.calcularArea()}`);
+        console.log(`Perímetro: ${this.calcularPerimetro()}`);
+        console.log("");
     }
 }
 
-class Boleto extends Pagamento{
-    processar(): void {
-        console.log("Gerando BOLETO...");
-        console.log(`Valor: R$${this.valor}`);
-        console.log("Boleto gerado!");
+class Quadrado extends Forma{
+    lado: number;
+
+    constructor(lado: number){
+        super("Quadrado");
+        this.lado = lado;
+    }
+
+    calcularArea(): number {
+        return this.lado * this.lado;
+    }
+
+    calcularPerimetro(): number {
+        return this.lado * 4;
     }
 }
 
-class PIX extends Pagamento{
-    processar(): void {
-        console.log("Iniciando transferência PIX...");
-        console.log(`Valor: R$${this.valor}`);
-        console.log("Pix enviado!");
+class Retangulo extends Forma{
+    largura: number;
+    altura: number;
+
+    constructor(largura: number, altura: number){
+        super("Retangulo");
+        this.largura = largura;
+        this.altura = altura;
+    }
+
+    calcularArea(): number {
+        return this.largura * this.altura;
+    }
+
+    calcularPerimetro(): number {
+        return (this.largura + this.altura) * 2;
     }
 }
 
-let pag1 = new CartaoCredito(100);
-pag1.processar();
+class Circulo extends Forma{
+    raio: number;
 
-console.log("");
+    constructor(raio: number){
+        super("Circulo");
+        this.raio = raio;
+    }
 
-let pag2 = new Boleto(250);
-pag2.processar();
+    calcularArea(): number {
+        return Math.PI * this.raio;
+    }
 
-console.log("");
+    calcularPerimetro(): number {
+        return 2 * Math.PI * this.raio;
+    }
+}
 
-let pag3 = new PIX(500);
-pag3.processar();
+let q = new Quadrado(5);
+q.mostrarInfo();
+
+let r = new Retangulo(4, 6);
+r.mostrarInfo();
+
+let c = new Circulo(3);
+c.mostrarInfo();
