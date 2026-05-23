@@ -1,5 +1,5 @@
-let nomes: string[] = ["Eduardo", "Bianca", "Quésia"];
+let palavras: string[] = ["Computador", "Guitarra", "Música", "Teclado", "Mouse", "Mate"];
 
-for(let i = 0; i <= nomes.length - 1; i++){
-    console.log(nomes[i]);
+for(let i = 0; i <= palavras.length - 1; i++){
+    console.log(palavras[i]);
 }
