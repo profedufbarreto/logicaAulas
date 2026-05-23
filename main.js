@@ -1,9 +1,7 @@
 "use strict";
-let meuCarro = {
-    marca: "Toyota",
-    modelo: "Corola",
-    ano: 2020
+let pPessoa = {
+    nome: "Eduardo",
+    idade: 38
 };
-console.log(`Marca: ${meuCarro.marca}`);
-console.log(`Modelo: ${meuCarro.modelo}`);
-console.log(`Ano: ${meuCarro.ano}`);
+console.log(`Meu nome é: ${pPessoa.nome}`);
+console.log(`E tenho ${pPessoa.idade} anos.`);
