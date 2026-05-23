@@ -1,33 +1,50 @@
-abstract class Animal{
-    nome: string;
+abstract class Pagamento{
+    valor: number;
 
-    constructor(nome: string){
-        this.nome = nome;
+    constructor(valor: number){
+        this.valor = valor;
     }
 
-    abstract fazerSom(): void; //filho OBRIGA implementar;
+    abstract processar(): void;
 
-    mostrarNome(): void{
-        console.log(`Nome: ${this.nome}.`);
-    }
-}
-
-class Cachorro extends Animal{
-    fazerSom(): void {
-        console.log(`${this.nome} faz: Au au!!`);
+    mostrarValor(): void{
+        console.log(`Valor: R$ ${this.valor}`);
     }
 }
 
-class Gato extends Animal{
-    fazerSom(): void {
-        console.log(`${this.nome} faz: miauuu!!`);
+class CartaoCredito extends Pagamento{
+    processar(): void {
+        console.log("Processando pagamento com CARTÃO...");
+        console.log(`Valor: R$${this.valor}`);
+        console.log("Pagamento aprovado!");
     }
 }
 
-let animal = new Animal("Rex");
+class Boleto extends Pagamento{
+    processar(): void {
+        console.log("Gerando BOLETO...");
+        console.log(`Valor: R$${this.valor}`);
+        console.log("Boleto gerado!");
+    }
+}
 
-let dog = new Cachorro("Rex");
-dog.fazerSom();
+class PIX extends Pagamento{
+    processar(): void {
+        console.log("Iniciando transferência PIX...");
+        console.log(`Valor: R$${this.valor}`);
+        console.log("Pix enviado!");
+    }
+}
 
-let cat = new Gato("Mimi");
-cat.fazerSom();
+let pag1 = new CartaoCredito(100);
+pag1.processar();
+
+console.log("");
+
+let pag2 = new Boleto(250);
+pag2.processar();
+
+console.log("");
+
+let pag3 = new PIX(500);
+pag3.processar();

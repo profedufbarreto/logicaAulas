@@ -1,26 +1,38 @@
 "use strict";
-class Pessoa {
-    constructor(nome, idade, cpf) {
-        this.nome = nome;
-        this.idade = idade;
-        this.cpf = cpf;
+class Pagamento {
+    constructor(valor) {
+        this.valor = valor;
     }
-    getIdade() {
-        return this.idade;
-    }
-    getCpf() {
-        return this.cpf;
-    }
-    setIdade(novaIdade) {
-        if (novaIdade > 0) {
-            this.idade = novaIdade;
-        }
-    }
-    saudacao() {
-        console.log(`Olá, eu sou o ${this.nome}.`);
+    mostrarValor() {
+        console.log(`Valor: R$ ${this.valor}`);
     }
 }
-let p1 = new Pessoa("Eduardo", 38, "123.456.789-01");
-console.log(p1.nome);
-console.log(p1.getIdade());
-console.log(p1.getCpf());
+class CartaoCredito extends Pagamento {
+    processar() {
+        console.log("Processando pagamento com CARTÃO...");
+        console.log(`Valor: R$${this.valor}`);
+        console.log("Pagamento aprovado!");
+    }
+}
+class Boleto extends Pagamento {
+    processar() {
+        console.log("Gerando BOLETO...");
+        console.log(`Valor: R$${this.valor}`);
+        console.log("Boleto gerado!");
+    }
+}
+class PIX extends Pagamento {
+    processar() {
+        console.log("Iniciando transferência PIX...");
+        console.log(`Valor: R$${this.valor}`);
+        console.log("Pix enviado!");
+    }
+}
+let pag1 = new CartaoCredito(100);
+pag1.processar();
+console.log("");
+let pag2 = new Boleto(250);
+pag2.processar();
+console.log("");
+let pag3 = new PIX(500);
+pag3.processar();
