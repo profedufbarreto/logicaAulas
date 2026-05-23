@@ -1,5 +1,5 @@
 "use strict";
 let palavras = ["Computador", "Guitarra", "Música", "Teclado", "Mouse", "Mate"];
-for (let palavra of palavras) {
+palavras.forEach((palavra) => {
     console.log(palavra);
-}
+});
