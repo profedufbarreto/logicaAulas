@@ -1,6 +1,6 @@
-import * as readline from "readline";
+import * as realine from "readline";
 
-const rl = readline.createInterface({
+const rl = realine.createInterface({
     input: process.stdin,
     output: process.stdout
 });
@@ -13,15 +13,20 @@ function perguntar(questao: string): Promise<string>{
     });
 }
 
-async function main(): Promise<void>{
+async function obterNomeCompleto(): Promise<string>{
     let nome: string = await perguntar("Digite seu nome: ");
-    let idade: number = parseInt(await perguntar("Digite sua idade: "));
+    let sobrenome: string = await perguntar("Digite seu sobrenome: ");
+    
+    return nome + " " + sobrenome;
+}
 
-    console.log("\n ---- DADOS ----");
-    console.log(`Nome: ${nome}`);
-    console.log(`Idade: ${idade}`);
+async function main(): Promise<void>{
+    let nomeCompleto: string = await obterNomeCompleto();
+
+    console.log("Nome completo: " + nomeCompleto);
 
     rl.close();
+
 }
 
 main();

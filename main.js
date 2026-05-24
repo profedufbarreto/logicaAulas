@@ -42,8 +42,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const readline = __importStar(require("readline"));
-const rl = readline.createInterface({
+const realine = __importStar(require("readline"));
+const rl = realine.createInterface({
     input: process.stdin,
     output: process.stdout
 });
@@ -54,13 +54,17 @@ function perguntar(questao) {
         });
     });
 }
-function main() {
+function obterNomeCompleto() {
     return __awaiter(this, void 0, void 0, function* () {
         let nome = yield perguntar("Digite seu nome: ");
-        let idade = parseInt(yield perguntar("Digite sua idade: "));
-        console.log("\n ---- DADOS ----");
-        console.log(`Nome: ${nome}`);
-        console.log(`Idade: ${idade}`);
+        let sobrenome = yield perguntar("Digite seu sobrenome: ");
+        return nome + " " + sobrenome;
+    });
+}
+function main() {
+    return __awaiter(this, void 0, void 0, function* () {
+        let nomeCompleto = yield obterNomeCompleto();
+        console.log("Nome completo: " + nomeCompleto);
         rl.close();
     });
 }
