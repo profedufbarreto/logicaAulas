@@ -1,3 +1,5 @@
+import { AsyncLocalStorage } from "async_hooks";
+import { BlobOptions } from "buffer";
 import * as readline from "readline";
 
 const rl = readline.createInterface({
@@ -5,7 +7,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-function perguntar(questao: string): Promise<string> {
+function perguntar(questao: string): Promise<string>{
     return new Promise((resolve) => {
         rl.question(questao, (resposta: string) => {
             resolve(resposta);
@@ -14,12 +16,11 @@ function perguntar(questao: string): Promise<string> {
 }
 
 async function main(): Promise<void> {
-    let num1: number = parseInt(await perguntar("Digite o primeiro número: "));
-    let num2: number = parseInt(await perguntar("Digite o segundo número: "));
+    let nome: string = await perguntar("Digite seu nome: ");
+    let idade: number = parseInt(await perguntar("Digite sua idade: "));
 
-    let resultado: number = num1 + num2;
-
-    console.log("Resultado: " + resultado);
+    console.log("Nome: " + nome);
+    console.log("Idade: " + idade);
 
     rl.close();
 }
