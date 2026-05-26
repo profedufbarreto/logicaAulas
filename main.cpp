@@ -1,13 +1,19 @@
 #include <iostream>
 
-int quadrado(int n) {
-    return n * n;
+void imprimirAteN(int n) {
+    for (int i = 1; i <= n; i++) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
 }
 
 int main() {
-    std::cout << "Quadrado de 5: " << quadrado(5) << std::endl;
-    std::cout << "Quadrado de 8: " << quadrado(8) << std::endl;
-    std::cout << "Quadrado de 3: " << quadrado(3) << std::endl;
+    int numero;
+    
+    std::cout << "Digite um número: ";
+    std::cin >> numero;
+    
+    imprimirAteN(numero);
     
     return 0;
 }
