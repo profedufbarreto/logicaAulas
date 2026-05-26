@@ -1,22 +1,27 @@
 #include <iostream>
 
-int main() {
-    int numero;
-    int contador = 0;
+long long calcularFatorial(int n) {
+    long long resultado = 1;
     
-    while (true) {
-        std::cout << "Digite um número (0 para parar): ";
-        std::cin >> numero;
-        
-        if (numero == 0) {
-            break;
-        }
-        
-        contador++;
+    for (int i = 1; i <= n; i++) {
+        resultado *= i;
     }
     
-    std::cout << "Você digitou " << contador << " números!" << std::endl;
+    return resultado;
+}
+
+int main() {
+    int numero;
+    
+    std::cout << "Digite um número para calcular o fatorial: ";
+    std::cin >> numero;
+    
+    if (numero < 0) {
+        std::cout << "Erro: fatorial de número negativo não existe!" << std::endl;
+    } else {
+        long long fatorial = calcularFatorial(numero);
+        std::cout << numero << "! = " << fatorial << std::endl;
+    }
     
     return 0;
 }
-    
