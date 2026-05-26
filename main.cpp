@@ -1,15 +1,22 @@
 #include <iostream>
 
 int main() {
-    int soma = 0;
+    int numero;
+    int contador = 0;
     
-    for (int i = 1; i <= 20; i++) {
-        if (i % 2 == 0) {
-            soma += i;
+    while (true) {
+        std::cout << "Digite um número (0 para parar): ";
+        std::cin >> numero;
+        
+        if (numero == 0) {
+            break;
         }
+        
+        contador++;
     }
     
-    std::cout << "Soma dos pares de 1 a 20: " << soma << std::endl;
+    std::cout << "Você digitou " << contador << " números!" << std::endl;
     
     return 0;
 }
+    
