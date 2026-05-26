@@ -14,11 +14,12 @@ function perguntar(questao: string): Promise<string> {
 }
 
 async function main(): Promise<void> {
-    let nome: string = await perguntar("Digite seu nome: ");
-    let idade: number = parseInt(await perguntar("Digite sua idade: "));
+    let num1: number = parseInt(await perguntar("Digite o primeiro número: "));
+    let num2: number = parseInt(await perguntar("Digite o segundo número: "));
 
-    console.log("Nome: " + nome);
-    console.log("Idade: " + idade);
+    let resultado: number = num1 + num2;
+
+    console.log("Resultado: " + resultado);
 
     rl.close();
 }
