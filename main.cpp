@@ -1,26 +1,15 @@
 #include <iostream>
 
+int contarDigitos(int n) {
+    // PARADA: Se o número chegou a zero, não há mais dígitos para contar
+    if (n == 0) return 0;
+    
+    // RECURSÃO: Soma 1 (pelo dígito atual) e passa o resto do número para a próxima chamada
+    return 1 + contarDigitos(n / 10);
+}
+
 int main() {
-    int numeros[5] = {5, 3, 8, 2, 1};
-    
-    std::cout << "ANTES: ";
-    for (int i = 0; i < 5; i++) std::cout << numeros[i] << " ";
-    std::cout << "\n\n";
-    
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 4; j++) {
-            if (numeros[j] > numeros[j+1]) {
-                // Troca os dois
-                int temp = numeros[j];
-                numeros[j] = numeros[j+1];
-                numeros[j+1] = temp;
-            }
-        }
-    }
-    
-    std::cout << "DEPOIS: ";
-    for (int i = 0; i < 5; i++) std::cout << numeros[i] << " ";
-    std::cout << "\n";
-    
+    int numero = 2026;
+    std::cout << "O numero " << numero << " tem " << contarDigitos(numero) << " digitos.\n";
     return 0;
 }
