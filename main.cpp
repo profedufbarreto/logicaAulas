@@ -1,15 +1,26 @@
 #include <iostream>
 
 int fibonacci(int n) {
-    // PARADAS — bonecas que já sabem a resposta!
-    if (n == 0) return 0;
-    if (n == 1) return 1;
+    std::cout << "Calculando fib(" << n << ")\n";
     
-    // Se não é boneca 0 ou 1, pergunta para as duas bonecas menores
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    // PARADAS
+    if (n == 0) {
+        std::cout << "  fib(0) = 0 (PARADA!)\n";
+        return 0;
+    }
+    if (n == 1) {
+        std::cout << "  fib(1) = 1 (PARADA!)\n";
+        return 1;
+    }
+    
+    // Chama a si mesma com números menores
+    std::cout << "  fib(" << n << ") = fib(" << (n-1) << ") + fib(" << (n-2) << ")\n";
+    int resultado = fibonacci(n - 1) + fibonacci(n - 2);
+    std::cout << "  fib(" << n << ") = " << resultado << "\n";
+    return resultado;
 }
 
 int main() {
-    std::cout << fibonacci(10) << "\n";
+    fibonacci(4);
     return 0;
 }
