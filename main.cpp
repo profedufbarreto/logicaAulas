@@ -1,26 +1,27 @@
 #include <iostream>
 
-int fibonacci(int n) {
-    std::cout << "Calculando fib(" << n << ")\n";
-    
-    // PARADAS
-    if (n == 0) {
-        std::cout << "  fib(0) = 0 (PARADA!)\n";
-        return 0;
-    }
-    if (n == 1) {
-        std::cout << "  fib(1) = 1 (PARADA!)\n";
-        return 1;
-    }
-    
-    // Chama a si mesma com números menores
-    std::cout << "  fib(" << n << ") = fib(" << (n-1) << ") + fib(" << (n-2) << ")\n";
-    int resultado = fibonacci(n - 1) + fibonacci(n - 2);
-    std::cout << "  fib(" << n << ") = " << resultado << "\n";
-    return resultado;
-}
-
 int main() {
-    fibonacci(4);
+    int numeros[5] = {5, 3, 8, 2, 1};
+    
+    std::cout << "ANTES: ";
+    for (int i = 0; i < 5; i++) std::cout << numeros[i] << " ";
+    std::cout << "\n\n";
+    
+    // Bubble sort
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (numeros[j] > numeros[j+1]) {
+                // Troca os dois
+                int temp = numeros[j];
+                numeros[j] = numeros[j+1];
+                numeros[j+1] = temp;
+            }
+        }
+    }
+    
+    std::cout << "DEPOIS: ";
+    for (int i = 0; i < 5; i++) std::cout << numeros[i] << " ";
+    std::cout << "\n";
+    
     return 0;
 }
