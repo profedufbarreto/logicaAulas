@@ -1,20 +1,15 @@
 #include <iostream>
 
-void contar(int numero) {
-    // PARADA — sem isso fica infinito!
-    if (numero == 0) {
-        std::cout << "PAREI!\n";
-        return;
-    }
+int fibonacci(int n) {
+    // PARADAS — bonecas que já sabem a resposta!
+    if (n == 0) return 0;
+    if (n == 1) return 1;
     
-    // Imprime o número
-    std::cout << numero << "\n";
-    
-    // Chama a si mesma com um número MENOR
-    contar(numero - 1);
+    // Se não é boneca 0 ou 1, pergunta para as duas bonecas menores
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 int main() {
-    contar(5);
+    std::cout << fibonacci(10) << "\n";
     return 0;
 }
