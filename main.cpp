@@ -9,7 +9,18 @@ int contarDigitos(int n) {
 }
 
 int main() {
-    int numero = 2026;
-    std::cout << "O numero " << numero << " tem " << contarDigitos(numero) << " digitos.\n";
+    int numeroUsuario; // 1. Cria a variável vazia para armazenar o valor
+    
+    std::cout << "Digite um numero inteiro: ";
+    std::cin >> numeroUsuario; // 2. Captura o que o usuário digitar no teclado
+    
+    // Tratamento para o caso específico do número zero (0 tem 1 dígito)
+    if (numeroUsuario == 0) {
+        std::cout << "O numero 0 tem 1 digito.\n";
+    } else {
+        // 3. Passa a variável preenchida para a função calcular
+        std::cout << "O numero " << numeroUsuario << " tem " << contarDigitos(numeroUsuario) << " digitos.\n";
+    }
+    
     return 0;
 }
