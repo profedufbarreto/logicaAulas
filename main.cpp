@@ -2,10 +2,11 @@
 
 int main() {
     int numero = 42;
+    int* ptr = &numero;
     
-    // & significa "endereço de"
-    std::cout << "Número: " << numero << std::endl;
-    std::cout << "Endereço: " << &numero << std::endl;
+    // * significa "conteúdo do endereço"
+    std::cout << "Acessar via variável: " << numero << std::endl;
+    std::cout << "Acessar via ponteiro: " << *ptr << std::endl;
     
     return 0;
 }
