@@ -1,18 +1,22 @@
 #include <iostream>
 #include <string>
 
-struct Pessoa {
+struct Aluno {
     std::string nome;
-    int idade;
-    float altura;
+    float nota1;
+    float nota2;
 };
 
+float calcularMedia(Aluno a) {
+    return (a.nota1 + a.nota2) / 2;
+}
+
 int main() {
-    Pessoa p1 = {"João", 20, 1.75};
-    Pessoa p2 = {"Maria", 25, 1.65};
+    Aluno aluno = {"Pedro", 8.0, 9.5};
     
-    std::cout << p1.nome << " tem " << p1.idade << " anos" << std::endl;
-    std::cout << p2.nome << " tem " << p2.idade << " anos" << std::endl;
+    float media = calcularMedia(aluno);
+    
+    std::cout << aluno.nome << " - Média: " << media << std::endl;
     
     return 0;
 }
