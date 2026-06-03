@@ -8,17 +8,11 @@ struct Pessoa {
 };
 
 int main() {
-    // Criar uma pessoa
-    Pessoa p1;
+    Pessoa p1 = {"João", 20, 1.75};
+    Pessoa p2 = {"Maria", 25, 1.65};
     
-    p1.nome = "João";
-    p1.idade = 20;
-    p1.altura = 1.75;
-    
-    // Acessar os dados
-    std::cout << "Nome: " << p1.nome << std::endl;
-    std::cout << "Idade: " << p1.idade << std::endl;
-    std::cout << "Altura: " << p1.altura << std::endl;
+    std::cout << p1.nome << " tem " << p1.idade << " anos" << std::endl;
+    std::cout << p2.nome << " tem " << p2.idade << " anos" << std::endl;
     
     return 0;
 }
