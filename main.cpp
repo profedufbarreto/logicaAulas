@@ -1,37 +1,17 @@
 #include <iostream>
 
-void quickSort(int* arr, int esquerda, int direita) {
-    if (esquerda >= direita) return;
-    
-    int pivo = arr[direita];
-    int i = esquerda - 1;
-    
-    for (int j = esquerda; j < direita; j++) {
-        if (arr[j] < pivo) {
-            i++;
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+int encontrarMaior(int* arr, int tamanho) {
+    int maior = arr[0];
+    for (int i = 1; i < tamanho; i++) {
+        if (arr[i] > maior) {
+            maior = arr[i];
         }
     }
-    
-    int temp = arr[i + 1];
-    arr[i + 1] = arr[direita];
-    arr[direita] = temp;
-    
-    quickSort(arr, esquerda, i);
-    quickSort(arr, i + 2, direita);
+    return maior;
 }
 
 int main() {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int tamanho = 7;
-    
-    quickSort(arr, 0, tamanho - 1);
-    
-    for (int i = 0; i < tamanho; i++) {
-        std::cout << arr[i] << " ";
-    }
-    
+    int arr[] = {3, 7, 2, 9, 1, 5};
+    std::cout << "Maior elemento: " << encontrarMaior(arr, 6) << std::endl;  // 9
     return 0;
 }
