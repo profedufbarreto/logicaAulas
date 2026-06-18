@@ -1,25 +1,29 @@
 #include <iostream>
 
-struct CampeonatoCopa {
-    int ano;
-    std::string campeao;
-};
-
 int main() {
-    CampeonatoCopa copas[5] = {
-        {2022, "Argentina"},
-        {2018, "França"},
-        {2014, "Alemanha"},
-        {2010, "Espanha"},
-        {2006, "Itália"}
-    };
+    int jogos;
     
-    std::cout << "===== CAMPEÕES DA COPA =====" << std::endl;
+    std::cout << "===== CALCULADOR DE PÚBLICO =====" << std::endl;
     std::cout << std::endl;
     
-    for (int i = 0; i < 5; i++) {
-        std::cout << copas[i].ano << " - Campeão: " << copas[i].campeao << std::endl;
+    std::cout << "Quantos jogos? ";
+    std::cin >> jogos;
+    
+    int somaPublico = 0;
+    
+    for (int i = 1; i <= jogos; i++) {
+        int publico;
+        std::cout << "Público jogo " << i << ": ";
+        std::cin >> publico;
+        somaPublico += publico;
     }
+    
+    int media = somaPublico / jogos;
+    
+    std::cout << std::endl;
+    std::cout << "===== RESULTADO =====" << std::endl;
+    std::cout << "Média de público: " << media << " pessoas" << std::endl;
+    std::cout << "Total de público: " << somaPublico << " pessoas" << std::endl;
     
     return 0;
 }
