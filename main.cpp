@@ -1,37 +1,44 @@
 #include <iostream>
 
 int main() {
-    int numeros[] = {15, 8, 25, 3, 42, 12, 7, 30};
-    int tamanho = 8;
+    int matriz[3][4] = {
+        {10, 25, 5, 40},
+        {15, 8, 30, 12},
+        {20, 3, 18, 35}
+    };
     
-    int maior = numeros[0];
-    int menor = numeros[0];
-    int posMaior = 0;
-    int posMenor = 0;
+    int maior = matriz[0][0];
+    int menor = matriz[0][0];
+    int linhaM = 0, colunaM = 0;
+    int linhaN = 0, colunaN = 0;
     
-    std::cout << "===== MIN E MAX =====" << std::endl;
+    std::cout << "===== MIN E MAX EM MATRIZ =====" << std::endl;
     std::cout << std::endl;
     
-    std::cout << "Array: ";
-    for (int i = 0; i < tamanho; i++) {
-        std::cout << numeros[i] << " ";
-    }
-    std::cout << std::endl;
-    std::cout << std::endl;
-    
-    for (int i = 0; i < tamanho; i++) {
-        if (numeros[i] > maior) {
-            maior = numeros[i];
-            posMaior = i;
+    std::cout << "Matriz:" << std::endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            std::cout << matriz[i][j] << " ";
+            
+            if (matriz[i][j] > maior) {
+                maior = matriz[i][j];
+                linhaM = i;
+                colunaM = j;
+            }
+            if (matriz[i][j] < menor) {
+                menor = matriz[i][j];
+                linhaN = i;
+                colunaN = j;
+            }
         }
-        if (numeros[i] < menor) {
-            menor = numeros[i];
-            posMenor = i;
-        }
+        std::cout << std::endl;
     }
     
-    std::cout << "MAIOR: " << maior << " na posição " << posMaior << std::endl;
-    std::cout << "MENOR: " << menor << " na posição " << posMenor << std::endl;
+    std::cout << std::endl;
+    std::cout << "MAIOR: " << maior << " na posição [" << linhaM 
+              << "][" << colunaM << "]" << std::endl;
+    std::cout << "MENOR: " << menor << " na posição [" << linhaN 
+              << "][" << colunaN << "]" << std::endl;
     
     return 0;
 }
