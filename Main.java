@@ -5,21 +5,23 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
 
         int[] numeros = { 10, 20, 30, 40, 50 };
-        int procurado = 30;
 
-        boolean encontrado = false;
+        System.out.println("Digite o número a ser procurado: ");
+        int procurando = teclado.nextInt();
+
+        int posicao = -1;
 
         for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i] == procurado) {
-                encontrado = true;
+            if (numeros[i] == procurando) {
+                posicao = i;
                 break;
             }
         }
 
-        if (encontrado) {
-            System.out.println("Número " + procurado + " Encontrado!!");
+        if (posicao != -1) {
+            System.out.println("Encontrado na posição " + posicao);
         } else {
-            System.out.println("Número: " + procurado + " Não encontrado!!");
+            System.out.println("Não encontrado!");
         }
 
         teclado.close();
