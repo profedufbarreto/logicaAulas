@@ -1,11 +1,15 @@
 #include <iostream>
 
 int main() {
-    int numeros[] = {10, 25, 30, 45, 50, 60, 75, 90};
+    int numeros[] = {15, 8, 25, 3, 42, 12, 7, 30};
     int tamanho = 8;
-    int buscado;
     
-    std::cout << "===== BUSCAR NÚMERO =====" << std::endl;
+    int maior = numeros[0];
+    int menor = numeros[0];
+    int posMaior = 0;
+    int posMenor = 0;
+    
+    std::cout << "===== MIN E MAX =====" << std::endl;
     std::cout << std::endl;
     
     std::cout << "Array: ";
@@ -15,24 +19,19 @@ int main() {
     std::cout << std::endl;
     std::cout << std::endl;
     
-    std::cout << "Digite o número a buscar: ";
-    std::cin >> buscado;
-    
-    int posicao = -1;
-    
     for (int i = 0; i < tamanho; i++) {
-        if (numeros[i] == buscado) {
-            posicao = i;
-            break;
+        if (numeros[i] > maior) {
+            maior = numeros[i];
+            posMaior = i;
+        }
+        if (numeros[i] < menor) {
+            menor = numeros[i];
+            posMenor = i;
         }
     }
     
-    std::cout << std::endl;
-    if (posicao != -1) {
-        std::cout << "Encontrado na posição " << posicao << std::endl;
-    } else {
-        std::cout << "Não encontrado!" << std::endl;
-    }
+    std::cout << "MAIOR: " << maior << " na posição " << posMaior << std::endl;
+    std::cout << "MENOR: " << menor << " na posição " << posMenor << std::endl;
     
     return 0;
 }
