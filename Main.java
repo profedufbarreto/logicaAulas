@@ -5,24 +5,17 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
 
         int[] numeros = { 10, 20, 30, 40, 50 };
+        int limite = 25;
 
-        System.out.println("Digite o número a ser procurado: ");
-        int procurando = teclado.nextInt();
-
-        int posicao = -1;
+        int contador = 0;
 
         for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i] == procurando) {
-                posicao = i;
-                break;
+            if (numeros[i] > limite) {
+                contador++;
             }
         }
 
-        if (posicao != -1) {
-            System.out.println("Encontrado na posição " + posicao);
-        } else {
-            System.out.println("Não encontrado!");
-        }
+        System.out.println("Números maiores que " + limite + ": " + contador);
 
         teclado.close();
     }
