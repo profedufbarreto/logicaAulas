@@ -6,9 +6,9 @@ public class Main {
 
         int[] numeros = { 10, 20, 30, 40, 50 };
 
-        System.out.println("Primeiro elemento: " + numeros[0]);
-        System.out.println("Segundo elemento: " + numeros[1]);
-        System.out.println("Terceiro elemento: " + numeros[2]);
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Posição " + i + " = " + numeros[i]);
+        }
 
         teclado.close();
     }
