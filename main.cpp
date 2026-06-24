@@ -1,56 +1,37 @@
 #include <iostream>
 
 int main() {
-    int pilha[10];
-    int topo = -1;
-    int opcao;
+    int numeros[] = {10, 25, 30, 45, 50, 60, 75, 90};
+    int tamanho = 8;
+    int buscado;
     
-    std::cout << "===== PILHA COM MENU =====" << std::endl;
+    std::cout << "===== BUSCAR NÚMERO =====" << std::endl;
+    std::cout << std::endl;
     
-    while (true) {
-        std::cout << std::endl;
-        std::cout << "1. Empilhar" << std::endl;
-        std::cout << "2. Desempilhar" << std::endl;
-        std::cout << "3. Exibir pilha" << std::endl;
-        std::cout << "4. Sair" << std::endl;
-        std::cout << "Escolha: ";
-        std::cin >> opcao;
-        
-        if (opcao == 1) {
-            if (topo < 9) {
-                int valor;
-                std::cout << "Digite o valor: ";
-                std::cin >> valor;
-                topo++;
-                pilha[topo] = valor;
-                std::cout << "Empilhado!" << std::endl;
-            } else {
-                std::cout << "Pilha cheia!" << std::endl;
-            }
-        } 
-        else if (opcao == 2) {
-            if (topo >= 0) {
-                std::cout << "Removido: " << pilha[topo] << std::endl;
-                topo--;
-            } else {
-                std::cout << "Pilha vazia!" << std::endl;
-            }
-        } 
-        else if (opcao == 3) {
-            if (topo >= 0) {
-                std::cout << "Pilha: ";
-                for (int i = 0; i <= topo; i++) {
-                    std::cout << pilha[i] << " ";
-                }
-                std::cout << std::endl;
-            } else {
-                std::cout << "Pilha vazia!" << std::endl;
-            }
-        } 
-        else if (opcao == 4) {
-            std::cout << "Saindo..." << std::endl;
+    std::cout << "Array: ";
+    for (int i = 0; i < tamanho; i++) {
+        std::cout << numeros[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "Digite o número a buscar: ";
+    std::cin >> buscado;
+    
+    int posicao = -1;
+    
+    for (int i = 0; i < tamanho; i++) {
+        if (numeros[i] == buscado) {
+            posicao = i;
             break;
         }
+    }
+    
+    std::cout << std::endl;
+    if (posicao != -1) {
+        std::cout << "Encontrado na posição " << posicao << std::endl;
+    } else {
+        std::cout << "Não encontrado!" << std::endl;
     }
     
     return 0;
