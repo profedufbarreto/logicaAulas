@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        int[] numbers = { 10, 20, 30, 40, 50 };
-        int average = 0;
-        int sum = 0;
+        int[] numeros = { 10, 21, 30, 45, 50 };
+        int pares = 0;
 
-        for (int i = 0; i < numbers.length; i++) {
-            sum += numbers[i];
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 == 0) {
+                pares += 1;
+            }
         }
-        average = sum / numbers.length;
 
-        System.out.println("Average: " + average);
+        System.out.println(pares);
     }
 }
