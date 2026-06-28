@@ -13,8 +13,14 @@ public class Main {
 
         int tamanho = numeros.size();
 
-        System.out.println("Tamanho da lista: " + tamanho);
+        System.out.println("Lista original: " + numeros);
+        System.out.println("Tamanho: " + numeros.size());
+
+        numeros.remove(2);
+
+        System.out.println("\nDepois de remover a posição 2: ");
         System.out.println("Lista: " + numeros);
+        System.out.println("Tamanho: " + numeros.size());
 
     }
 }
