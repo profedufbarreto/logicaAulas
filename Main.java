@@ -8,6 +8,8 @@ public class Main {
         numeros.add(10);
         numeros.add(20);
         numeros.add(30);
+        numeros.add(40);
+        numeros.add(50);
 
         System.out.println(numeros);
 
