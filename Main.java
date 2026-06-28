@@ -1,23 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        int[] numeros = { 5, 15, 25, 35, 45, 55, 65 };
-        int posicao = -1;
-        int num = 35;
+        int[] numeros = { 10, 20, 10, 30, 10, 40, 10 };
+
+        int cont = 0;
 
         for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i] == num) {
-                posicao = i;
-                break;
+            if (numeros[i] == 10) {
+                cont += 1;
             }
-
         }
-
-        if (posicao != -1) {
-            System.out.println("Encontrado na posição: " + posicao);
-        } else {
-            System.out.println("Não encontrado!");
-        }
-
+        System.out.println("O número 10 foi encontado : " + cont);
     }
 }
