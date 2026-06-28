@@ -1,15 +1,15 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
-        int[] numeros = { 10, 20, 30, 40, 50 };
-        int[] copia = new int[numeros.length];
+        ArrayList<Integer> numeros = new ArrayList<>();
 
-        for (int i = 0; i < numeros.length; i++) {
-            copia[i] = numeros[i];
-        }
-        for (int i = 0; i < numeros.length; i++) {
-            System.out.println(copia[i]);
-        }
+        numeros.add(10);
+        numeros.add(20);
+        numeros.add(30);
+
+        System.out.println(numeros);
 
     }
 }
