@@ -11,16 +11,15 @@ public class Main {
         numeros.add(40);
         numeros.add(50);
 
-        int tamanho = numeros.size();
-
-        System.out.println("Lista original: " + numeros);
-        System.out.println("Tamanho: " + numeros.size());
-
-        numeros.remove(2);
-
-        System.out.println("\nDepois de remover a posição 2: ");
         System.out.println("Lista: " + numeros);
-        System.out.println("Tamanho: " + numeros.size());
+
+        boolean tem10 = numeros.contains(10);
+        boolean tem25 = numeros.contains(25);
+        boolean tem50 = numeros.contains(50);
+
+        System.out.println("\nContém 10? " + tem10);
+        System.out.println("Contém 25? " + tem25);
+        System.out.println("Contém 50?" + tem50);
 
     }
 }
