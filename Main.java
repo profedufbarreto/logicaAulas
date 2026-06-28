@@ -11,7 +11,14 @@ public class Main {
         numeros.add(40);
         numeros.add(50);
 
+        int primeiro = numeros.get(0);
+        int segundo = numeros.get(1);
+        int ultimo = numeros.get(4);
+
         System.out.println(numeros);
+        System.out.println("Primeiro: " + primeiro);
+        System.out.println("Segundo: " + segundo);
+        System.out.println("Último: " + ultimo);
 
     }
 }
