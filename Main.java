@@ -11,11 +11,13 @@ public class Main {
         numeros.add(40);
         numeros.add(50);
 
-        int soma = 0;
+        int maior = numeros.get(0);
 
         for (int i = 0; i < numeros.size(); i++) {
-            soma += numeros.get(i);
+            if (maior < numeros.get(i)) {
+                maior = numeros.get(i);
+            }
         }
-        System.out.println("O resultado da soma é: " + soma);
+        System.out.println("O maior é: " + maior);
     }
 }
