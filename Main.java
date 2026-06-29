@@ -11,13 +11,14 @@ public class Main {
         numeros.add(40);
         numeros.add(50);
 
-        int maior = numeros.get(0);
+        int menor = numeros.get(0);
 
         for (int i = 0; i < numeros.size(); i++) {
-            if (maior < numeros.get(i)) {
-                maior = numeros.get(i);
+            if (menor > numeros.get(i)) {
+                menor = numeros.get(i);
             }
         }
-        System.out.println("O maior é: " + maior);
+
+        System.out.println("O menor valor é: " + menor);
     }
 }
