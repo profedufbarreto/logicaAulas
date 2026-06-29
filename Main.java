@@ -6,19 +6,23 @@ public class Main {
         ArrayList<Integer> numeros = new ArrayList<>();
 
         numeros.add(10);
-        numeros.add(20);
+        numeros.add(21);
         numeros.add(30);
-        numeros.add(40);
+        numeros.add(45);
         numeros.add(50);
+        numeros.add(8);
+        numeros.add(33);
+        numeros.add(14);
 
-        int menor = numeros.get(0);
+        int pares = 0;
 
         for (int i = 0; i < numeros.size(); i++) {
-            if (menor > numeros.get(i)) {
-                menor = numeros.get(i);
+            if (numeros.get(i) % 2 == 0) {
+                pares += 1;
             }
         }
 
-        System.out.println("O menor valor é: " + menor);
+        System.out.println("A quantidade de números pares é: " + pares);
+
     }
 }
