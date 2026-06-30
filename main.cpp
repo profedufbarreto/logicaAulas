@@ -2,9 +2,9 @@
 
 int main() {
     int numeros[5];
-    int maior = 0;
+    int menor = 0;
     
-    std::cout << "===== 3. ENCONTRAR MAIOR =====" << std::endl;
+    std::cout << "===== 4. ENCONTRAR MENOR =====" << std::endl;
     std::cout << std::endl;
     
     for (int i = 0; i < 5; i++) {
@@ -12,16 +12,16 @@ int main() {
         std::cin >> numeros[i];
     }
     
-    maior = numeros[0];
+    menor = numeros[0];
     
     for (int i = 1; i < 5; i++) {
-        if (numeros[i] > maior) {
-            maior = numeros[i];
+        if (numeros[i] < menor) {
+            menor = numeros[i];
         }
     }
     
     std::cout << std::endl;
-    std::cout << "O maior numero eh: " << maior << std::endl;
+    std::cout << "O menor numero eh: " << menor << std::endl;
     
     return 0;
 }
