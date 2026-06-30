@@ -17,12 +17,12 @@ public class Main {
         int soma = 0;
 
         for (int i = 0; i < numeros.size(); i++) {
-            if (numeros.get(i) % 2 == 0) {
-                soma += numeros.get(i);
+            if (numeros.get(i) % 2 != 0) {
+                soma = soma + numeros.get(i);
             }
         }
 
-        System.out.println("O resultado da soma é: " + soma);
+        System.out.println("A soma dos ímpares é de: " + soma);
 
     }
 }
