@@ -14,15 +14,15 @@ public class Main {
         numeros.add(33);
         numeros.add(14);
 
-        int pares = 0;
+        int soma = 0;
 
         for (int i = 0; i < numeros.size(); i++) {
             if (numeros.get(i) % 2 == 0) {
-                pares += 1;
+                soma += numeros.get(i);
             }
         }
 
-        System.out.println("A quantidade de números pares é: " + pares);
+        System.out.println("O resultado da soma é: " + soma);
 
     }
 }
