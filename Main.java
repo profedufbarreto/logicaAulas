@@ -14,15 +14,15 @@ public class Main {
         numeros.add(33);
         numeros.add(14);
 
-        int soma = 0;
+        int posicao = -1;
 
-        for (int i = 0; i < numeros.size(); i++) {
-            if (numeros.get(i) % 2 != 0) {
-                soma = soma + numeros.get(i);
+        for(int i = 0; i < numeros.size(); i++){
+            if(numeros.get(i) == 30){
+                posicao = i;
             }
         }
 
-        System.out.println("A soma dos ímpares é de: " + soma);
+        System.out.println("A posição do 30 é: " + posicao);
 
     }
 }
