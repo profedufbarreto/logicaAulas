@@ -1,18 +1,22 @@
 #include <iostream>
+#include <vector>
 
 int main() {
-    int numeros[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-    for(int i = 0; i < 10; i++){
-        if(numeros[i] % 2 == 0){
-            if(numeros[i] == 10){
-                std::cout<<numeros[i]<<std::endl;
-            }else{
-                std::cout<<numeros[i]<<", "<<std::endl;
-            }
-        }
+    std::vector<int> numeros;
+    
+    std::cout << "===== 2. TAMANHO DO VECTOR =====" << std::endl;
+    std::cout << std::endl;
+    
+    numeros.push_back(5);
+    numeros.push_back(10);
+    numeros.push_back(15);
+    
+    std::cout << "Tamanho do vector: " << numeros.size() << std::endl;
+    std::cout << "Elementos: ";
+    for (int i = 0; i < numeros.size(); i++) {
+        std::cout << numeros[i] << " ";
     }
-
+    std::cout << std::endl;
     
     return 0;
 }
