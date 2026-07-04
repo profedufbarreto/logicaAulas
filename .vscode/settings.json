@@ -55,5 +55,13 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "java.jdt.ls.java.home": "C:\\Users\\eduar\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-25\\jdk-25.0.2",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-25",
+      "path": "C:\\Users\\eduar\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-25\\jdk-25.0.2",
+      "default": true
+    }
+  ]
 }
