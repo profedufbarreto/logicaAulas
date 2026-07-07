@@ -4,7 +4,7 @@
 int main() {
     std::vector<int> numeros;
     
-    std::cout << "===== 6. REMOVER ELEMENTO ESPECIFICO =====" << std::endl;
+    std::cout << "===== 10. SOMA TOTAL =====" << std::endl;
     std::cout << std::endl;
     
     numeros.push_back(10);
@@ -12,19 +12,19 @@ int main() {
     numeros.push_back(30);
     numeros.push_back(40);
     
-    std::cout << "Antes: ";
+    std::cout << "Vector: ";
     for (int i = 0; i < numeros.size(); i++) {
         std::cout << numeros[i] << " ";
     }
     std::cout << std::endl;
-    
-    numeros.erase(numeros.begin() + 1);
-    
-    std::cout << "Depois: ";
-    for (int i = 0; i < numeros.size(); i++) {
-        std::cout << numeros[i] << " ";
-    }
     std::cout << std::endl;
+    
+    int soma = 0;
+    for (int i = 0; i < numeros.size(); i++) {
+        soma += numeros[i];
+    }
+    
+    std::cout << "Soma: " << soma << std::endl;
     
     return 0;
 }
