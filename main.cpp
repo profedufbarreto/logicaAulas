@@ -3,37 +3,29 @@
 
 int main() {
     std::vector<int> numeros;
+    int quantidade;
     
-    std::cout << "===== 13. BUSCAR ELEMENTO =====" << std::endl;
+    std::cout << "===== 14. ADICIONAR DO USUARIO =====" << std::endl;
     std::cout << std::endl;
     
-    numeros.push_back(10);
-    numeros.push_back(20);
-    numeros.push_back(30);
-    numeros.push_back(40);
+    std::cout << "Quantos numeros? ";
+    std::cin >> quantidade;
     
-    std::cout << "Vector: ";
+    std::cout << std::endl;
+    
+    for (int i = 0; i < quantidade; i++) {
+        int numero;
+        std::cout << "Digite o numero " << (i + 1) << ": ";
+        std::cin >> numero;
+        numeros.push_back(numero);
+    }
+    
+    std::cout << std::endl;
+    std::cout << "Numeros adicionados: ";
     for (int i = 0; i < numeros.size(); i++) {
         std::cout << numeros[i] << " ";
     }
     std::cout << std::endl;
-    std::cout << std::endl;
-    
-    int buscado = 30;
-    int posicao = -1;
-    
-    for (int i = 0; i < numeros.size(); i++) {
-        if (numeros[i] == buscado) {
-            posicao = i;
-            break;
-        }
-    }
-    
-    if (posicao != -1) {
-        std::cout << "Numero " << buscado << " encontrado na posicao " << posicao << std::endl;
-    } else {
-        std::cout << "Numero nao encontrado!" << std::endl;
-    }
     
     return 0;
 }
