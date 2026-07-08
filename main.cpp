@@ -3,27 +3,36 @@
 
 int main() {
     std::vector<int> numeros;
-    int quantidade;
     
-    std::cout << "===== 14. ADICIONAR DO USUARIO =====" << std::endl;
+    std::cout << "===== 15. PARES E IMPARES =====" << std::endl;
     std::cout << std::endl;
     
-    std::cout << "Quantos numeros? ";
-    std::cin >> quantidade;
+    numeros.push_back(5);
+    numeros.push_back(10);
+    numeros.push_back(15);
+    numeros.push_back(20);
+    numeros.push_back(25);
     
-    std::cout << std::endl;
-    
-    for (int i = 0; i < quantidade; i++) {
-        int numero;
-        std::cout << "Digite o numero " << (i + 1) << ": ";
-        std::cin >> numero;
-        numeros.push_back(numero);
-    }
-    
-    std::cout << std::endl;
-    std::cout << "Numeros adicionados: ";
+    std::cout << "Vector: ";
     for (int i = 0; i < numeros.size(); i++) {
         std::cout << numeros[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "Pares: ";
+    for (int i = 0; i < numeros.size(); i++) {
+        if (numeros[i] % 2 == 0) {
+            std::cout << numeros[i] << " ";
+        }
+    }
+    std::cout << std::endl;
+    
+    std::cout << "Impares: ";
+    for (int i = 0; i < numeros.size(); i++) {
+        if (numeros[i] % 2 != 0) {
+            std::cout << numeros[i] << " ";
+        }
     }
     std::cout << std::endl;
     
