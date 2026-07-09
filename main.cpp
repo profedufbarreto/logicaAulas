@@ -1,14 +1,18 @@
 #include <iostream>
-#include <string>
 
 int main() {
-    std::string palavra;
+    int idade;
     
-    std::cout << "Digite uma palavra: ";
-    std::cin >> palavra;
+    std::cout << "Digite a sua idade: ";
+    std::cin >> idade;
     
-    std::cout << "A palavra digitada possui o caractere inicial: " << palavra[0] << std::endl;
-    std::cout << "Resultado: " << palavra << std::endl;
+    if (idade < 18) {
+        std::cout << "Menor de idade." << std::endl;
+    } else if (idade >= 18 && idade < 60) {
+        std::cout << "Maior de idade." << std::endl;
+    } else {
+        std::cout << "Terceira idade." << std::endl;
+    }
     
     return 0;
 }
