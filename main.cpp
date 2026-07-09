@@ -1,17 +1,24 @@
 #include <iostream>
 
 int main() {
-    int idade;
+    int opcao;
     
-    std::cout << "Digite a sua idade: ";
-    std::cin >> idade;
+    std::cout << "Selecione o menu de operacao:\n1 - Iniciar Sistema\n2 - Configurar\n3 - Sair\nEscolha: ";
+    std::cin >> opcao;
     
-    if (idade < 18) {
-        std::cout << "Menor de idade." << std::endl;
-    } else if (idade >= 18 && idade < 60) {
-        std::cout << "Maior de idade." << std::endl;
-    } else {
-        std::cout << "Terceira idade." << std::endl;
+    switch (opcao) {
+        case 1:
+            std::cout << "Iniciando o sistema..." << std::endl;
+            break;
+        case 2:
+            std::cout << "Abrindo configuracoes..." << std::endl;
+            break;
+        case 3:
+            std::cout << "Saindo... Ate logo!" << std::endl;
+            break;
+        default:
+            std::cout << "Opcao invalida!" << std::endl;
+            break;
     }
     
     return 0;
