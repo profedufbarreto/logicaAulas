@@ -1,25 +1,23 @@
 #include <iostream>
 
 int main() {
-    int opcao;
+    int numero = 0;
+    int soma = 0;
     
-    std::cout << "Selecione o menu de operacao:\n1 - Iniciar Sistema\n2 - Configurar\n3 - Sair\nEscolha: ";
-    std::cin >> opcao;
+    std::cout << "Digite numeros para somar (ou digite -1 para parar):" << std::endl;
     
-    switch (opcao) {
-        case 1:
-            std::cout << "Iniciando o sistema..." << std::endl;
-            break;
-        case 2:
-            std::cout << "Abrindo configuracoes..." << std::endl;
-            break;
-        case 3:
-            std::cout << "Saindo... Ate logo!" << std::endl;
-            break;
-        default:
-            std::cout << "Opcao invalida!" << std::endl;
-            break;
+    // Executa enquanto a condicao de parada (sentinela) nao for atingida
+    while (numero != -1) {
+        std::cout << "Numero: ";
+        std::cin >> numero;
+        
+        // Garante que o valor -1 nao entre no calculo da soma
+        if (numero != -1) {
+            soma += numero;
+        }
     }
+    
+    std::cout << "\nSoma total: " << soma << std::endl;
     
     return 0;
 }
