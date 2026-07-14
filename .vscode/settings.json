@@ -63,5 +63,6 @@
       "path": "C:\\Users\\eduar\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-25\\jdk-25.0.2",
       "default": true
     }
-  ]
+  ],
+  "java.debug.settings.onBuildFailureProceed": true
 }
