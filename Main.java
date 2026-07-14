@@ -1,11 +1,13 @@
+import java.util.Scanner;
+
 public class Main {
-    public static int dobrar(int numero) {
-        return numero * 2;
+    public static int somar(int a, int b) {
+        return a + b;
     }
 
     public static void main(String[] args) {
-        int resultado = dobrar(5);
+        int resultado = somar(4, 2);
 
-        System.out.println("O número é: " + resultado);
+        System.out.println("O resultado é: " + resultado);
     }
 }
