@@ -2,12 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static boolean positivo(int num) {
-        boolean pos = false;
-
-        if (num >= 0) {
-            pos = true;
-        }
-        return pos;
+        return num >= 0;
     }
 
     public static void main(String[] args) {
